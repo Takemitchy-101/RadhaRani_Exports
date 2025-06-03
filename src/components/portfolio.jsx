@@ -1,0 +1,46 @@
+import React from 'react';
+import commonIcon from '../assets/commonIcon.png';
+import pf1 from '../assets/portf1.png';
+import pf2 from '../assets/portf2.png';
+import pf3 from '../assets/portf3.png';
+import pf4 from '../assets/portf4.png';
+
+const Portfolio = () => {
+  return (
+    <div className="py-16 px-4 sm:px-10 md:px-20 bg-white">
+      {/* Title Section */}
+      <div className="text-center mb-16">
+        <div className="flex items-center justify-center mb-4">
+          <div className="custom-line" />
+          <div className="h-16 w-16 mx-6 flex items-center justify-center">
+            <img src={commonIcon} alt="icon" className="h-12 w-12 object-contain" />
+          </div>
+          <div className="custom-line" />
+        </div>
+        <h2 className="allheading">Our Portfolio</h2>
+        <p className="alldes">
+          Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
+          Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
+        </p>
+      </div>
+
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        {/* Left Large Image */}
+        <div className="w-full">
+          <img src={pf1} alt="Portfolio 1" className="portfolio-image" />
+        </div>
+
+        {/* Right 2x2 Grid */}
+        <div className="grid grid-cols-2 gap-6">
+          <img src={pf3} alt="Portfolio 2" className="portfolio-image" />
+          <img src={pf3} alt="Portfolio 3" className="portfolio-image" />
+          <img src={pf4} alt="Portfolio 4" className="portfolio-image" />
+          <img src={pf4} alt="Portfolio 5" className="portfolio-image" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;

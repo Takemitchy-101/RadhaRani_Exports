@@ -1,0 +1,75 @@
+import React from 'react';
+import profile1 from '../assets/Profile1.png';
+import profile2 from '../assets/Profile2.png';
+import profile3 from '../assets/Profile3.png';
+import commonIcon from '../assets/commonIcon.png';
+import tbg from '../assets/teamBg.png';
+import { Row, Col } from 'antd';
+
+export const TeamDes = () => {
+    const ProfileData = [
+        {
+            id: 1,
+            image: profile1,
+            name: "John Doe",
+            role: "Product Care"
+        },
+        {
+            id: 2,
+            image: profile2,
+            name: "Jenny Doe",
+            role: "Marketing"
+        },
+        {
+            id: 3,
+            image: profile3,
+            name: "Tom Abell",
+            role: "Human Resource"
+        },
+    ];
+
+    return (
+        <div className="flex flex-col items-center relative overflow-hidden">
+            <img
+                src={tbg}
+                alt="decorative background"
+                className="absolute top-0 right-0 w-[85px] md:w-[120px] opacity-40 pointer-events-none z-0"
+            />
+
+            <div className="flex items-center my-10 z-10">
+                <div className="custom-line" />
+                <div className="h-16 w-16 flex items-center justify-center rounded-full mx-3">
+                    <img
+                        src={commonIcon}
+                        alt="Team Icon"
+                    />
+                </div>
+                <div className="custom-line" />
+            </div>
+
+            <h2 className="allheading">
+                Meet Our Team
+            </h2>
+
+            <p className="alldes">
+                Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
+            </p>
+
+            <Row gutter={[16, 16]} justify="center" className="z-10">
+                {ProfileData.map((item) => (
+                    <Col key={item.id} sm={24} md={12} lg={8}>
+                        <div className="text-center p-10 transition-transform hover:scale-105 duration-300 rounded-lg shadow-md bg-white">
+                            <img
+                                src={item.image}
+                                alt={item.name}
+                                className="h-[220px] w-[220px] object-contain rounded-full mx-auto"
+                            />
+                            <div className="font-semibold text-3xl mt-4 headFont">{item.name}</div>
+                            <div className="text-sm mt-2 text-gray-600 uppercase tracking-wide subFont">{item.role}</div>
+                        </div>
+                    </Col>
+                ))}
+            </Row>
+        </div>
+    );
+};
