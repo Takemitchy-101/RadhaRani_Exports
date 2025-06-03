@@ -20,7 +20,7 @@ export const Hero = () => {
           backgroundPosition: 'center',
         }}
       />
-
+ 
       <div className="h-full flex flex-col justify-center px-4 md:px-16">
         <Row
           gutter={[24, 24]}

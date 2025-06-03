@@ -11,13 +11,13 @@ import newRangeMain from '../assets/newRangeMain.png';
 const categories = [
   { id: 1, icon: type1, label: 'Ayurvedic' },
   { id: 2, icon: type3, label: 'Chemical' },
-  { id: 3, icon: type2, label: 'Wax' },
+  { id: 3, icon: type2, label: 'Wax Items' },
   { id: 4, icon: type4, label: 'Oil & Metals' },
 ];
 
 const ProductType = () => {
   return (
-    <div className='bg-[#f3f8f3] relative h-[350px] '>
+    <div className='bg-[#f3f8f3] relative h-full '>
       <img
         src={newRangeBG1}
         alt="decor"
@@ -29,7 +29,7 @@ const ProductType = () => {
         className='absolute right-0 w-[85px] md:w-[150px] opacity-80 pointer-events-none z-0'
       />
 
-      <div className='relative -top-20 z-10'>
+      <div className='relative top-0 sm:-top-20 z-10'>
         <div className="flex justify-center items-center bg-[#ffffff] py-10 px-4 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
           <Row
             className="w-full"
@@ -53,10 +53,10 @@ const ProductType = () => {
                 {categories.map((item) => (
                   <div
                     key={item.id}
-                    className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
+                    className="flex flex-wrap items-center gap-3 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
                   >
-                    <img src={item.icon} alt={item.label} className="w-[60px] h-[60px]" />
-                    <span className="text-base sm:text-lg font-semibold underline headFont">{item.label}</span>
+                        <img src={item.icon} alt={item.label} className="w-[60px] h-[60px]" />
+                        <span className="text-base sm:text-lg font-semibold underline headFont">{item.label}</span>
                   </div>
                 ))}
               </div>
