@@ -1,7 +1,8 @@
 import React from 'react';
-import profile1 from '../assets/Profile1.png';
-import profile2 from '../assets/Profile2.png';
-import profile3 from '../assets/Profile3.png';
+import profile1 from '../assets/profile1.png';
+import profile2 from '../assets/profile2.png';
+import profile3 from '../assets/profile3.png';
+// import image from '../assets/Profile'
 import commonIcon from '../assets/commonIcon.png';
 import tbg from '../assets/teamBg.png';
 import { Row, Col } from 'antd';
