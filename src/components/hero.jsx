@@ -112,8 +112,7 @@ export const Hero = () => {
                 <span className="text-[#73BE73]">Globally Delivered</span>
               </h1>
               <button className="mainbutton mt-2 md:mt-4 subFont">
-                {/* Explore Our Products */}
-                Lucky Kanathe
+                Explore Our Products
               </button>
             </div>
           </Col>
