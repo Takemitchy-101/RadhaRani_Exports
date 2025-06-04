@@ -18,6 +18,7 @@ const NewRange = () => {
   ];
 
   return (
+
     <div className="relative bg-[#f3f8f3] pb-24 w-full overflow-hidden z-10">
       {/* Background Decorations */}
       <img
@@ -26,6 +27,7 @@ const NewRange = () => {
         className="absolute bottom-0 left-0 w-[85px] md:w-[150px] opacity-80 pointer-events-none z-0"
       />
       <img
+      
         src={newRangeBG4}
         alt="decor"
         className="absolute bottom-0 right-0 w-[85px] md:w-[150px] opacity-80 pointer-events-none z-0"

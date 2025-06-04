@@ -29,7 +29,7 @@ const ProductType = () => {
         className='absolute right-0 w-[85px] md:w-[150px] opacity-80 pointer-events-none z-0'
       />
 
-      <div className='relative top-0 sm:-top-20 z-10'>
+      <div className='relative -top-1 sm:-top-5 lg:-top-15  z-10'>
         <div className="flex justify-center items-center bg-[#ffffff] py-10 px-4 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
           <Row
             className="w-full"
