@@ -29,7 +29,7 @@ const ProductType = () => {
         className='absolute right-0 w-[85px] md:w-[150px] opacity-80 pointer-events-none z-0'
       />
 
-      <div className='relative -top-1 sm:-top-5 lg:-top-15  z-10'>
+      <div className='relative -top-5 sm:-top-5 lg:-top-15  z-10'>
         <div className="flex justify-center items-center bg-[#ffffff] py-10 px-4 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
           <Row
             className="w-full"
@@ -40,26 +40,33 @@ const ProductType = () => {
             <Col xs={24} md={12} className="flex flex-col justify-between">
               <div className="text-left mb-6">
                 <h1 className="allheading">
-                  Discover Our Range
+                  Uncover Global Offerings
                 </h1>
                 <p className="text-base sm:text-lg text-gray-700 font-[Karla,sans-serif]">
-                  Experience unmatched quality with our top-rated service,
+                 Experience Premium Quality Worldwide. Our natural and 
                   <br className="hidden sm:block" />
-                  designed to exceed your expectations every time.
+                  industrial products deliver excellence every time
                 </p>
               </div>
 
-              <div className=" grid grid-cols-2 gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-6 mt-6 sm:mt-10">
+              <Row gutter={[16, 16]} className="mt-6 sm:mt-10">
                 {categories.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex flex-wrap items-center gap-3 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer"
-                  >
-                        <img src={item.icon} alt={item.label} className="w-[60px] h-[60px]" />
-                        <span className="text-base sm:text-lg font-semibold underline headFont">{item.label}</span>
-                  </div>
+                  <Col
+                    key={item.id} xs={12} sm={12} md={12} lg={12} xl={12} className="flex items-center">
+                    <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer w-full">
+                      <img
+                        src={item.icon}
+                        alt={item.label}
+                        className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]"
+                      />
+                      <span className="text-base sm:text-lg font-semibold underline headFont">
+                        {item.label}
+                      </span>
+                    </div>
+                  </Col>
                 ))}
-              </div>
+              </Row>
+
             </Col>
 
             {/* Image */}

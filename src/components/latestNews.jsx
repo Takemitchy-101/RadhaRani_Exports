@@ -39,12 +39,12 @@ export const LatestNews = () => {
 
 
   return (
-    <div className="relative w-full bg-[#eeffee] py-8 ">
-        <img 
-          src={newsBg} 
-          alt="decor"
-          className='absolute  right-10 bottom-5 w-[70px] md:w-[120px] opacity-60 pointer-events-none z-0'
-          />
+    <div className="relative w-full bg-[#eeffee] py-8 mt-10">
+      <img
+        src={newsBg}
+        alt="decor"
+        className='absolute  right-10 bottom-5 w-[70px] md:w-[120px] opacity-60 pointer-events-none z-0'
+      />
 
       <div className='flex flex-col items-center'>
         <div className="flex items-center my-5">
@@ -59,11 +59,11 @@ export const LatestNews = () => {
         </div>
 
         <h2 className="allheading mb-6 ml-5">
-          Our Latest News
+          Insights & Articles
         </h2>
 
         <p className="alldes  px-4">
-          Experience unmatched quality with our top-rated servi  with our top-rated service, designed to exceed your expectations every time.
+          Stay updated with our most recent announcements, valuable insights, and exciting developments right here. Discover what's new and how we're continuing to evolve and serve you better.
         </p>
       </div>
 

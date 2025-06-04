@@ -104,12 +104,12 @@ export const Hero = () => {
           >
             <div className="ml-2 sm:ml-4 md:ml-6 lg:ml-40">
               <h2 className="text-lg md:text-xl font-semibold mb-2 md:mb-4 subFont">
-                Your daily dose of nature’s magic starts here.
+                 Your daily dose of nature’s magic starts here.     
               </h2>
               <h1 className="text-4xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4 md:mb-6 headFont">
-                The <span>Best</span>
+                Nature’s <span> Finest,</span>
                 <br />
-                <span className="text-[#73BE73]">Natural products</span>
+                <span className="text-[#73BE73]">Globally Delivered</span>
               </h1>
               <button className="mainbutton mt-2 md:mt-4 subFont">
                 Explore Our Products

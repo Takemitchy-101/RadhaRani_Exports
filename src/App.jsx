@@ -21,10 +21,10 @@ function App() {
     <>
       <Hero/>
       <ProductType/>
-      <NewRange/>
+      {/* <NewRange/> */}
       <BestServices/>
       <WhatYouNeed/>
-      <BestSelling/>
+      {/* <BestSelling/> */}
       <CustomerReview/>
       <KeyAdvantages/>
       <Portfolio/>

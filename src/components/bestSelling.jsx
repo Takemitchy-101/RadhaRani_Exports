@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import commonIcon from '../assets/commonIcon.png';
 import bg1 from '../assets/bestSellBG1.png';
 import bg2 from '../assets/bestSellBG2.png';
@@ -7,7 +6,7 @@ import pd2 from '../assets/product2.png';
 import pd3 from '../assets/product3.png';
 import pd4 from '../assets/product4.png';
 import { Row, Col, Button } from 'antd';
-import { ShoppingCartOutlined, HeartOutlined, HeartFilled } from '@ant-design/icons';
+import { ShoppingCartOutlined} from '@ant-design/icons';
 
 export const BestSelling = () => {
   const productData = [
@@ -20,15 +19,6 @@ export const BestSelling = () => {
     { id: 7, Image: pd3, pdname: 'Senna Leaves', price: '₹60.00 - ₹70.00', rating: '★★★★★' },
     { id: 8, Image: pd4, pdname: 'Ashwagandha', price: '₹60.00 - ₹70.00', rating: '★★★★☆' },
   ];
-
-  //   const [liked, setLiked] = useState({});
-
-  // const toggleLike = (productId) => {
-  //   setLiked(prev => ({
-  //     ...prev,
-  //     [productId]: !prev[productId],
-  //   }));
-  // };
 
   return (
     <div className="relative w-full bg-[#EEFFEE] py-8 md:py-5">
@@ -63,18 +53,6 @@ export const BestSelling = () => {
           {productData.map((item) => (
             <Col key={item.id} xs={24} sm={12} md={8} lg={6} className='transition-transform transform hover:scale-105'>
               <div className="relative bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center text-center">
-
-                {/* <HeartOutlined className="absolute top-4 right-4 border-gray-400 hover:border-red-500 cursor-pointer" /> */}
-                {/* <div
-                  onClick={toggleLike}
-                  className="absolute top-4 right-4 text-2xl cursor-pointer transition-colors duration-300"
-                >
-                  {
-                    liked ? <HeartFilled className='!text-red-500' />
-                      : <HeartOutlined />
-                  }
-                  <HeartOutlined />
-                </div> */}
 
                 <img
                   src={item.Image}

@@ -17,12 +17,12 @@ import downrightbgBestSvc from '../assets/leftbgBestSvc.png';
 
 const BestServices = () => {
     const serviceData = [
-        { id: 1, image: bs1, heading: 'Ayurvedic Medicine', des: 'Operates within regulations, ensuring safety and legal compliance' },
-        { id: 2, image: bs2, heading: 'EcoDelivery', des: 'Operates within regulations, ensuring safety and legal compliance' },
-        { id: 3, image: bs3, heading: '100 % Natural Edibles', des: 'Operates within regulations, ensuring safety and legal compliance' },
-        { id: 4, image: bs4, heading: 'No Extracts used', des: 'Operates within regulations, ensuring safety and legal compliance' },
-        { id: 5, image: bs5, heading: '100% Natural Herbs', des: 'Operates within regulations, ensuring safety and legal compliance, regulations' },
-        { id: 6, image: bs6, heading: 'Safe & Legal', des: 'Operates within regulations, ensuring safety and legal compliance' },
+        { id: 1, image: bs1, heading: 'Ayurvedic Medicine', des: 'Pure ayurvedic remedies for holistic health, trusted and effective.' },
+        { id: 2, image: bs2, heading: 'EcoDelivery', des: 'Sustainable, eco-friendly delivery ensuring fresh, responsibly transported products.' },
+        { id: 3, image: bs3, heading: '100 % Natural Edibles', des: 'Pure, natural edibles for wellness, free from artificial additives.' },
+        { id: 4, image: bs4, heading: 'No Extracts used', des: 'Whole, natural ingredients only, preserving authentic ayurvedic potency.' },
+        { id: 5, image: bs5, heading: '100% Natural Herbs', des: 'Authentic, sustainably sourced herbs for health and culinary uses.' },
+        { id: 6, image: bs6, heading: 'Safe & Legal', des: 'Compliant, safe products meeting global standards for your trust.' },
     ];
 
     return (
@@ -48,7 +48,7 @@ const BestServices = () => {
                     </div>
                     <div className="custom-line" />
                 </div>
-                <h2 className="allheading">Our Best Services</h2>
+                <h2 className="allheading">Green Wellness Solutions</h2>
                 <p className="alldes">
                     Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
                 </p>

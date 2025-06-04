@@ -11,19 +11,19 @@ export const KeyAdvantages = () => {
             id: 1,
             image: logo1,
             heading: "EXPERIENCE COMPANY",
-            des: "Pioneering innovation through bold experimentation and cutting-edge technology. Turning visionary ideas into real-world.",
+            des: "We don't just offer products or services; we craft unforgettable journeys and meaningful interactions. Our focus is on designing every touchpoint to create truly exceptional customer experiences.",
         },
         {
             id: 2,
             image: logo2,
             heading: "Quality Products",
-            des: "Pioneering innovation through bold experimentation and cutting-edge technology. Turning visionary ideas into real-world.",
+            des: "We are committed to providing the finest, ensuring every product meets the highest standards of excellence. You can trust in our dedication to delivering superior quality that truly makes a difference.",
         },
         {
             id: 3,
             image: logo3,
             heading: "Product Manufacturing",
-            des: "Pioneering innovation through bold experimentation and cutting-edge technology. Turning visionary ideas into real-world.",
+            des: "Our robust product manufacturing process transforms raw materials into exceptional goods through precision and dedication.",
         },
     ];
 

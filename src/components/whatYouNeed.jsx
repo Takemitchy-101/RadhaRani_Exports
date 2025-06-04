@@ -107,30 +107,30 @@ const WhatYouNeed = () => {
       id: 1,
       Image: logo1,
       title: "Organic Product",
-      subtitle: "Operates within regulations, ensuring safety and legal compliance",
+      subtitle: "Harvested ethically, chemical-free, promoting well-being naturally.",
     },
     {
       id: 2,
       Image: logo2,
       title: "Extraction Procedure",
-      subtitle: "Operates within regulations, ensuring safety and legal compliance",
+      subtitle: "Isolating specific substances from complex materials effectively and precisely.",
     },
     {
       id: 3,
       Image: logo3,
       title: "Formulations",
-      subtitle: "Operates within regulations, ensuring safety and legal compliance",
+      subtitle: "Combining substances accurately to achieve specific product characteristics.",
     },
     {
       id: 4,
       Image: logo4,
       title: "Delivery",
-      subtitle: "Operates within regulations, ensuring safety and legal compliance",
+      subtitle: "Ensuring products reach destinations efficiently and securely.",
     },
   ];
 
   return (
-    <div className="relative px-4 md:px-20 py-10 overflow-hidden">
+    <div className="relative px-4 md:px-20 py-20 overflow-hidden">
       {/* Background image */}
       <div
         className="absolute top-0 left-0 w-full h-full -z-10"
@@ -154,7 +154,7 @@ const WhatYouNeed = () => {
           We Are What You Need
         </h2>
         <p className="text-base sm:text-lg text-white mt-4 max-w-3xl mx-auto subFont">
-          Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
+          Your journey to natural wellness begins here, with our trusted range of solutions for every need.
         </p>
       </div>
 

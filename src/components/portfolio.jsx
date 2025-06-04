@@ -17,10 +17,9 @@ const Portfolio = () => {
           </div>
           <div className="custom-line" />
         </div>
-        <h2 className="allheading">Our Portfolio</h2>
+        <h2 className="allheading">Crafted by Us</h2>
         <p className="alldes">
-          Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
-          Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
+          Explore our diverse collection of successful projects and innovative solutions that showcase our expertise and commitment to excellence. See how our work has helped clients achieve their goals and make an impact.
         </p>
       </div>
 

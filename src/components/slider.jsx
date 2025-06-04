@@ -72,7 +72,7 @@ export const SliderImage = () => {
             </div>
             <div className="custom-line" />
           </div>
-          <h2 className="allheading">Our Featured Varieties</h2>
+          <h2 className="allheading">Highlighted Selections</h2>
         </div>
 
         {/* Slider */}

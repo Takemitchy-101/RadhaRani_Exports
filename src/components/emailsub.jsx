@@ -14,10 +14,10 @@ export const Emailsub = () => {
         <Col xs={24} md={12}>
           <div className="text-left">
             <h1 className="text-xl sm:text-2xl text-white subFont">
-              Want To Know About Our Offers First?
+              Curious About Our Wellness Deals?
             </h1>
             <h1 className="text-2xl sm:text-4xl font-bold mb-4 text-white headFont">
-              Subscribe Our Email
+              Subscribe Here!
             </h1>
           </div>
         </Col>

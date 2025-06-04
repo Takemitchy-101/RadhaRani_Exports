@@ -100,7 +100,7 @@ export const CustomerReview = () => {
     {
       id: 1,
       stars: "★☆☆☆☆",
-      review: "Experience unmatched quality with our top-rated service, designed to exceed your expectations.",
+      review: "This Ayurvedic wax product is truly remarkable. Its natural blend offers gentle, effective results, leaving skin feeling soft and genuinely cared for. Highly recommend for holistic wellness.",
       pImage: img1,
       name: "Eleiner",
       profession: "Professor",
@@ -108,7 +108,7 @@ export const CustomerReview = () => {
     {
       id: 2,
       stars: "★★★☆☆",
-      review: "Experience unmatched quality with our top-rated service, designed to exceed your expectations.",
+      review: "This Ayurvedic wax product is truly remarkable. Its natural blend offers gentle, effective results, leaving skin feeling soft and genuinely cared for. Highly recommend for holistic wellness.",
       pImage: img2,
       name: "Eleiner",
       profession: "Developer",
@@ -116,7 +116,7 @@ export const CustomerReview = () => {
     {
       id: 3,
       stars: "★★★☆☆",
-      review: "Experience unmatched quality with our top-rated service, designed to exceed your expectations.",
+      review: "This Ayurvedic wax product is truly remarkable. Its natural blend offers gentle, effective results, leaving skin feeling soft and genuinely cared for. Highly recommend for holistic wellness.",
       pImage: img2,
       name: "Eleiner",
       profession: "Developer",
@@ -124,7 +124,7 @@ export const CustomerReview = () => {
     {
       id: 4,
       stars: "★★★★☆",
-      review: "Experience unmatched quality with our top-rated service, designed to exceed your expectations.",
+      review: "This Ayurvedic wax product is truly remarkable. Its natural blend offers gentle, effective results, leaving skin feeling soft and genuinely cared for. Highly recommend for holistic wellness.",
       pImage: img2,
       name: "Eleiner",
       profession: "Developer",
@@ -170,7 +170,7 @@ export const CustomerReview = () => {
         </div>
         <h2 className="allheading">Happy Customers</h2>
         <p className="alldes">
-          Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
+         Our greatest achievement is fostering delighted and loyal customers, whose satisfaction fuels our growth and inspires our continuous improvement.
         </p>
       </div>
 
@@ -180,7 +180,7 @@ export const CustomerReview = () => {
           <div key={item.id} className="px-4">
             <div className="bg-white border rounded-xl text-center p-5 transform transition-transform duration-300 ease-in-out scale-98 hover:scale-100 hover:shadow-xl h-full">
               <div className="text-black text-xl mb-4 headFont">{item.stars}</div>
-              <p className="text-gray-700 mb-6 text-sm leading-relaxed subFont">{item.review}</p>
+              <p className="text-gray-700 mb-6 text-sm leading-relaxed subFont  line-clamp-2">{item.review}</p>
               <div className="flex flex-col items-center">
                 <img
                   src={item.pImage}
