@@ -1,5 +1,5 @@
 import React from 'react';
-import profile1 from '../assets/profile1.png';
+import profile1 from '../assets/profile3.png';
 import profile2 from '../assets/profile2.png';
 import profile3 from '../assets/profile3.png';
 // import image from '../assets/Profile'
