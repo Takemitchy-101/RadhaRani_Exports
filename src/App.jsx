@@ -24,12 +24,12 @@ function App() {
       {/* <NewRange/> */}
       <BestServices/>
       <WhatYouNeed/>
-      {/* <BestSelling/> */}
+      <BestSelling/>
       <CustomerReview/>
       <KeyAdvantages/>
       <Portfolio/>
       <Emailsub/>
-      <TeamDes/>
+      {/* <TeamDes/> */}
       <LatestNews/>
       <Specification/>
       <SliderImage/>

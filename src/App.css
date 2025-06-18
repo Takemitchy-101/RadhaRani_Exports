@@ -83,3 +83,17 @@
    background-color: #16a34a !important; 
   color: #ffffff !important;
 }
+
+/* Add to your index.css or a global CSS file */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a3d9a5;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}

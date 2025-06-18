@@ -165,7 +165,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-3 border-b border-white/20">
         {/* Logo */}
         <div className="flex items-center ml-5">
-          <img src={logo} alt="Logo" className="h-15" />
+          <img src={logo} alt="Logo" className="h-20" />
         </div>
 
         <div className="md:hidden flex justify-between items-center w-full">
@@ -186,19 +186,19 @@ const Navbar = () => {
       <Row gutter={24} justify="center" align="middle" className="px-6 py-3">
 
         <Col className="hidden md:flex items-center space-x-10 subFont">
-          <a href="#" className="!text-white hover:text-green-300 ">Home</a>
+          <a href="#" className="!text-white hover:text-green-300 text-lg">Home</a>
           <Dropdown overlay={shopMenu} arrow>
-            <a href="#" onClick={(e) => e.preventDefault()} className="!text-white hover:text-green-300 ">
+            <a href="#" onClick={(e) => e.preventDefault()} className="!text-white hover:text-green-300 text-lg">
               Shop <DownOutlined />
             </a>
           </Dropdown>
-          <a href="#" className="!text-white hover:text-green-300">About</a>
+          <a href="#" className="!text-white hover:text-green-300 text-lg">About</a>
           <Dropdown overlay={pagesMenu} arrow>
-            <a href="#" onClick={(e) => e.preventDefault()} className="!text-white hover:text-green-300">
+            <a href="#" onClick={(e) => e.preventDefault()} className="!text-white hover:text-green-300 text-lg">
               Pages <DownOutlined />
             </a>
           </Dropdown>
-          <a href="#" className="!text-white hover:text-green-300">Contact</a>
+          <a href="#" className="!text-white hover:text-green-300 text-lg">Contact</a>
         </Col>
 
         {/* Right Icons (Desktop) */}
@@ -207,7 +207,7 @@ const Navbar = () => {
            <div className="w-[2px] h-7 bg-gray-400" />
           <ShoppingCartOutlined className="hover:text-green-300 cursor-pointer text-2xl" />
           <Dropdown overlay={currencyMenu}>
-            <a className="hover:text-green-300 !text-white">INR <DownOutlined /></a>
+            <a className="hover:text-green-300 !text-white text-lg">INR <DownOutlined /></a>
           </Dropdown>
         </Col>
 
@@ -231,7 +231,7 @@ const Navbar = () => {
 
       >
         <div className="flex flex-col space-y-4 subFont">
-          <a href="#" className='subFont !text-black'>Home</a>
+          <a href="#" className='subFont !text-black '>Home</a>
           <Dropdown overlay={shopMenu}><a href="#" className='subFont !text-black'>Shop <DownOutlined /></a></Dropdown>
           <a href="#" className='subFont !text-black'>About</a>
           <Dropdown overlay={pagesMenu}><a href="#" className='subFont !text-black'>Pages <DownOutlined /></a></Dropdown>

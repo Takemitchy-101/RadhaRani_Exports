@@ -9,6 +9,9 @@ import {
 import Bg from '../assets/BottomBarBg.png';
 import commonIcon from '../assets/needLogo.png';
 import logo from '../assets/mainLogo.png';
+import iol from '../assets/indianOilLogo.png';
+import Flag from 'react-world-flags';
+import { SiGooglemaps } from "react-icons/si";
 
 export const BottomBar = () => {
   const footerSections = [
@@ -22,11 +25,20 @@ export const BottomBar = () => {
     },
     {
       title: 'Exporting Countries',
-      links: ['Sri-Lanka', 'Nepal', 'Butan', 'Bangladesh'],
+      links: [
+        { name: 'Sri Lanka', code: 'LK' },
+        { name: 'Nepal', code: 'NP' },
+        { name: 'Bhutan', code: 'BT' },
+        { name: 'Bangladesh', code: 'BD' },
+      ],
     },
     {
-      title: 'Address',
-      content: `Radha Rani Exports,D-1 Strand Bank Road,\nJagannath Ghat Cross Road,\nNaffis Patti (Hari Ram Market),\nPin 700007`,
+      title: (
+        <span className="flex items-center justify-center gap-2">
+          <SiGooglemaps className="text-xl text-white" /> Address
+        </span>
+      ),
+      content: `Radha Rani Exports,\nD-1 Strand Bank Road,\nJagannath Ghat Cross Road,\nNaffis Patti (Hari Ram Market),\nPin 700007`,
     },
     {
       title: 'Contact Us',
@@ -46,23 +58,35 @@ export const BottomBar = () => {
         }}
       />
 
-      {/* Logo */}
+      {/* Logo Section */}
       <div className="flex items-center justify-center mt-6">
         <img src={commonIcon} alt="icon" className="h-[60px] w-[60px] object-contain mr-5" />
-        <img src={logo} alt="main logo" className="h-[150px] w-[170px] object-contain" />
+        <img src={logo} alt="main logo" className="h-auto w-[170px] object-contain" />
       </div>
 
-      <h1 className="text-center font-bold text-2xl -mt-5 mb-10 ml-7 headFont">
-        Distributors of Indian Oil Paraffin wax and White oil
-      </h1>
+         {/* Embedded Map */}
+       {/* <div className="px-4 pb-10 flex justify-center">
+        <div className="w-full md:w-3/4 lg:full xl:full rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            title="Radha Rani Exports Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.148328685766!2d88.35869797496403!3d22.608133079465932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b4cf4b2b1f%3A0x76034c5d0a18c74!2sRadha%20Rani%20Exports!5e0!3m2!1sen!2sin!4v1718615600000!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </div>    */}
 
-      {/* Footer Sections using AntD Grid */}
-      <div className="px-4 py-6">
+      {/* Footer Sections */}
+      <div className="px-4 py-10">
         <Row gutter={[16, 24]} justify="center">
           {footerSections.map((section, index) => (
             <Col
               key={index}
-              xs={12}  // 2 columns on mobile
+              xs={24}
               sm={12}
               md={6}
               lg={5}
@@ -74,13 +98,24 @@ export const BottomBar = () => {
               </h2>
               {section.links ? (
                 <ul className="text-gray-300 space-y-3 subFont">
-                  {section.links.map((link) => (
-                    <li key={link}>
-                      <a href="#" className="hover:underline !text-white">
-                        {link}
-                      </a>
-                    </li>
-                  ))}
+                  {section.title === 'Exporting Countries' ? (
+                    section.links.map((link) => (
+                      <li key={link.name} className="flex items-center gap-2 justify-center items">
+                        <Flag code={link.code} style={{ width: 20, height: 15, }} />
+                        <a href="#" className="hover:underline !text-white">
+                          {link.name}
+                        </a>
+                      </li>
+                    ))
+                  ) : (
+                    section.links.map((link) => (
+                      <li key={link}>
+                        <a href="#" className="hover:underline !text-white">
+                          {link}
+                        </a>
+                      </li>
+                    ))
+                  )}
                 </ul>
               ) : (
                 <p className="whitespace-pre-line text-gray-300 subFont">{section.content}</p>
@@ -90,17 +125,32 @@ export const BottomBar = () => {
         </Row>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="flex flex-col md:flex-row items-center justify-center px-4 py-6">
+      <Row justify="center" align="middle" className="">
+        <Col>
+          <img
+            src={iol}
+            alt="Indian Oil Logo"
+            className="h-[60px] w-[60px] object-contain"
+          />
+        </Col>
+        <Col>
+          <h1 className="text-left font-semibold text-2xl headFont ml-4">
+            Distributors of Indian Oil, Paraffin Wax and White Oil
+          </h1>
+        </Col>
+      </Row>
+
+      {/* Bottom Social Section */}
+      <div className="flex flex-col md:flex-row items-center justify-center px-4 py-6 ">
         <span className="text-sm text-gray-300 text-center mr-10">
           © 2025 <a href="#" className="hover:underline headFont">Radharani Exports</a>. All Rights Reserved.
         </span>
 
         <div className="flex mt-4 md:mt-0 space-x-10">
-          <XOutlined className="text-2xl hover:text-white cursor-pointer" />
-          <InstagramFilled className="text-2xl hover:text-white cursor-pointer" />
-          <FacebookFilled className="text-2xl hover:text-white cursor-pointer" />
-          <LinkedinFilled className="text-2xl hover:text-white cursor-pointer" />
+          <a href="#" aria-label="Twitter"><XOutlined className="text-2xl hover:text-white cursor-pointer" /></a>
+          <a href="#" aria-label="Instagram"><InstagramFilled className="text-2xl hover:text-white cursor-pointer" /></a>
+          <a href="#" aria-label="Facebook"><FacebookFilled className="text-2xl hover:text-white cursor-pointer" /></a>
+          <a href="#" aria-label="LinkedIn"><LinkedinFilled className="text-2xl hover:text-white cursor-pointer" /></a>
         </div>
       </div>
     </footer>
