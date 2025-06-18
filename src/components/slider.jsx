@@ -8,6 +8,8 @@ import sd2 from '../assets/slider2.png';
 import sd3 from '../assets/slider3.png';
 import sd4 from '../assets/slider4.png';
 import sd5 from '../assets/slider5.png';
+import { BiLocationPlus } from 'react-icons/bi';
+import { SiGooglemaps } from 'react-icons/si';
 
 export const SliderImage = () => {
 
@@ -61,7 +63,7 @@ export const SliderImage = () => {
   };
 
   return (
-    <div className='px-4 py-8 overflow-hidden bg-gradient-to-b from-[#eeffee] to-white'>
+    <div className='px-4 pt-8 overflow-hidden bg-gradient-to-b from-[#eeffee] to-white'>
       <div className="max-w-screen-xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-16 z-10 relative">
@@ -93,6 +95,33 @@ export const SliderImage = () => {
           ))}
         </Slider>
       </div>
+
+
+      <div className="px-4 mt-30 flex justify-center flex-col items-center">
+        
+        <h2 className="flex flex-col sm:flex-row items-center justify-center gap-2 text-center mb-4 border-1 border-gray-300 px-2 py-2 ">
+            {/* <div className="custom-line !w-[200px]" /> */}
+          <SiGooglemaps className="text-2xl sm:text-4xl md:text-5xl text-red-500" />
+          <span className="text-xl sm:text-2xl md:text-2xl font-semibold text-gray-800 headFont">
+            Visit Us at Our Office Location
+          </span>
+            {/* <div className="custom-line !w-[200px]" /> */}
+        </h2>
+
+        <div className="w-screen overflow-hidden shadow-md">
+          <iframe
+            title="Radha Rani Exports Location"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3683.642689125109!2d88.350333!3d22.585861!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM1JzA5LjEiTiA4OMKwMjEnMDEuMiJF!5e0!3m2!1sen!2sin!4v1718618200000!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </div>
+
     </div>
   );
 };

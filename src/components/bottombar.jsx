@@ -59,26 +59,12 @@ export const BottomBar = () => {
       />
 
       {/* Logo Section */}
-      <div className="flex items-center justify-center mt-6">
-        <img src={commonIcon} alt="icon" className="h-[60px] w-[60px] object-contain mr-5" />
-        <img src={logo} alt="main logo" className="h-auto w-[170px] object-contain" />
+      <div className="flex items-center justify-center ">
+        <img src={commonIcon} alt="icon" className="h-[60px] w-[60px] object-contain mr-5 mt-5" />
+        <img src={logo} alt="main logo" className="h-auto w-[170px] object-contain mt-5" />
       </div>
 
-         {/* Embedded Map */}
-       {/* <div className="px-4 pb-10 flex justify-center">
-        <div className="w-full md:w-3/4 lg:full xl:full rounded-lg overflow-hidden shadow-lg">
-          <iframe
-            title="Radha Rani Exports Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.148328685766!2d88.35869797496403!3d22.608133079465932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b4cf4b2b1f%3A0x76034c5d0a18c74!2sRadha%20Rani%20Exports!5e0!3m2!1sen!2sin!4v1718615600000!5m2!1sen!2sin"
-            width="100%"
-            height="250"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-      </div>    */}
+      {/* Embedded Map */}
 
       {/* Footer Sections */}
       <div className="px-4 py-10">
@@ -125,34 +111,40 @@ export const BottomBar = () => {
         </Row>
       </div>
 
-      <Row justify="center" align="middle" className="">
-        <Col>
-          <img
-            src={iol}
-            alt="Indian Oil Logo"
-            className="h-[60px] w-[60px] object-contain"
-          />
-        </Col>
-        <Col>
-          <h1 className="text-left font-semibold text-2xl headFont ml-4">
-            Distributors of Indian Oil, Paraffin Wax and White Oil
-          </h1>
-        </Col>
-      </Row>
+      <div className="flex flex-col items-center text-center sm:flex-row sm:justify-center sm:text-left">
+        <img
+          src={iol}
+          alt="Indian Oil Logo"
+          className="h-[50px] w-[50px] object-contain mb-2 sm:mb-0"
+        />
+        <h1 className="text-2xl font-semibold headFont sm:ml-4">
+          Distributors of Indian Oil, Paraffin Wax and White Oil
+        </h1>
+      </div>
+
 
       {/* Bottom Social Section */}
-      <div className="flex flex-col md:flex-row items-center justify-center px-4 py-6 ">
-        <span className="text-sm text-gray-300 text-center mr-10">
+      <div className="flex flex-col md:flex-row items-center justify-center px-4 py-6 text-center md:text-left">
+        <span className="text-sm text-gray-300 mb-4 md:mb-0">
           © 2025 <a href="#" className="hover:underline headFont">Radharani Exports</a>. All Rights Reserved.
         </span>
 
-        <div className="flex mt-4 md:mt-0 space-x-10">
-          <a href="#" aria-label="Twitter"><XOutlined className="text-2xl hover:text-white cursor-pointer" /></a>
-          <a href="#" aria-label="Instagram"><InstagramFilled className="text-2xl hover:text-white cursor-pointer" /></a>
-          <a href="#" aria-label="Facebook"><FacebookFilled className="text-2xl hover:text-white cursor-pointer" /></a>
-          <a href="#" aria-label="LinkedIn"><LinkedinFilled className="text-2xl hover:text-white cursor-pointer" /></a>
+        <div className="flex space-x-8 md:ml-8">
+          <a href="#" aria-label="Twitter">
+            <XOutlined className="text-2xl hover:text-white cursor-pointer" />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <InstagramFilled className="text-2xl hover:text-white cursor-pointer" />
+          </a>
+          <a href="#" aria-label="Facebook">
+            <FacebookFilled className="text-2xl hover:text-white cursor-pointer" />
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <LinkedinFilled className="text-2xl hover:text-white cursor-pointer" />
+          </a>
         </div>
       </div>
+
     </footer>
   );
 };

@@ -165,9 +165,12 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-3 border-b border-white/20">
         {/* Logo */}
         <div className="flex items-center ml-5">
-          <img src={logo} alt="Logo" className="h-20" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-14 sm:h-16 md:h-20 object-contain"
+          />
         </div>
-
         <div className="md:hidden flex justify-between items-center w-full">
           <div className="flex space-x-4">
           </div>
@@ -204,7 +207,7 @@ const Navbar = () => {
         {/* Right Icons (Desktop) */}
         <Col className="hidden md:flex justify-end items-center space-x-7 ml-5 ">
           <UserOutlined className="hover:text-green-300 cursor-pointer text-2xl" />
-           <div className="w-[2px] h-7 bg-gray-400" />
+          <div className="w-[2px] h-7 bg-gray-400" />
           <ShoppingCartOutlined className="hover:text-green-300 cursor-pointer text-2xl" />
           <Dropdown overlay={currencyMenu}>
             <a className="hover:text-green-300 !text-white text-lg">INR <DownOutlined /></a>
@@ -241,7 +244,7 @@ const Navbar = () => {
             <a className='subFont !text-black'>INR  <DownOutlined /></a>
           </Dropdown>
           <div className="flex space-x-3 mt-4">
-            <XOutlined/>
+            <XOutlined />
             <FaFacebookF />
             <FaLinkedinIn />
             <FaInstagram />

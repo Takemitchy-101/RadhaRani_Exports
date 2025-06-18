@@ -136,7 +136,7 @@ export const Hero = () => {
                 <img
                   src={mainPimage}
                   alt="Main"
-                  className="w-full h-auto object-contain transition-opacity duration-500 ease-in-out group-hover:opacity-0"
+                  className="w-full h-auto hidden md:block  sm:block object-contain transition-opacity duration-500 ease-in-out group-hover:opacity-0"
                 />
 
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 grid grid-cols-2 gap-10 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out">
