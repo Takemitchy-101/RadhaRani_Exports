@@ -39,7 +39,7 @@ export const LatestNews = () => {
 
 
   return (
-    <div className="relative w-full bg-[#eeffee] py-8 mt-10">
+    <div className="relative w-full bg-[#eeffee] py-8 ">
       <img
         src={newsBg}
         alt="decor"
