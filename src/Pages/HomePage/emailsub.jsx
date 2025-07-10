@@ -1,5 +1,5 @@
 import React from 'react';
-import emailSub from '../assets/emailSub.png';
+import emailSub from '../../assets/emailSub.png';
 import { Row, Col, Input, Button } from 'antd';
 
 export const Emailsub = () => {

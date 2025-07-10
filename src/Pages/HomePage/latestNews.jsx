@@ -1,9 +1,9 @@
 import React from 'react'
-import commonIcon from '../assets/commonIcon.png'
-import news1 from '../assets/new1.png'
-import news2 from '../assets/new2.png'
-import news3 from '../assets/new3.png'
-import newsBg from '../assets/newsBG.png'
+import commonIcon from '../../assets/commonIcon.png'
+import news1 from '../../assets/new1.png'
+import news2 from '../../assets/new2.png'
+import news3 from '../../assets/new3.png'
+import newsBg from '../../assets/newsBG.png'
 
 
 

@@ -97,3 +97,94 @@
 .custom-scrollbar::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
+
+/* exporting countries */
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container {
+  /* position: relative; */
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 14px 0;
+  border: 2px solid #15803d;
+  box-shadow: 0 0 10px rgba(21, 128, 61, 0.2);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 5s ;
+  /* animation-timing-function: linear ; */
+  animation-iteration-count: infinite ;
+}
+
+.marquee-flag {
+  flex-shrink: 0;
+  width: 60px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  margin-right: 40px; /* gap between flags */
+}
+
+.marquee-flag:hover {
+  transform: scale(1.1);
+}
+
+.marquee-flag img {
+  width: 36px;
+  height: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+
+.marquee {
+			border: 2px solid red ;
+			display: flex ;
+			overflow: hidden ;
+			white-space: nowrap ;
+			width: 300px ;
+		}
+		.marquee__item {
+			animation-duration: 4s ;
+			animation-iteration-count: infinite ;
+			animation-name: marquee-content ;
+			animation-timing-function: linear ;
+			padding: 5px 15px 5px 15px ;
+		}
+		.marquee:hover .marquee__item {
+			animation-play-state: paused ;
+		}
+
+		/**
+		* BOTH of the marquee items are going to be translating left at the same time.
+		* And, once each of them has translated to -100%, they will both snap back into
+		* place, making it seem as if they are continuously scrolling.
+		*/
+		@keyframes marquee-content {
+			from {
+				transform: translateX( 0% );
+			}
+			to {
+				transform: translateX( -100% );
+			}
+		}
+

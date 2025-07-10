@@ -1,12 +1,12 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import type1 from '../assets/ayurvedaIcon.png';
-import type2 from '../assets/waxIcon.png';
-import type3 from '../assets/chemicalIcon.png';
-import type4 from '../assets/oandmIcon.png';
-import newRangeBG1 from '../assets/newRangeBG1.png';
-import newRangeBG2 from '../assets/newRangeBG2.png';
-import newRangeMain from '../assets/newRangeMain.png';
+import type1 from '../../assets/ayurvedaIcon.png';
+import type2 from '../../assets/waxIcon.png';
+import type3 from '../../assets/chemicalIcon.png';
+import type4 from '../../assets/oandmIcon.png';
+import newRangeBG1 from '../../assets/newRangeBG1.png';
+import newRangeBG2 from '../../assets/newRangeBG2.png';
+import newRangeMain from '../../assets/newRangeMain.png';
 
 const categories = [
   { id: 1, icon: type1, label: 'Ayurvedic' },

@@ -1,13 +1,13 @@
 import React, { useState, useRef } from 'react';
 import Slider from 'react-slick';
-import commonIcon from '../assets/commonIcon.png';
+import commonIcon from '../../assets/commonIcon.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import sd1 from '../assets/slider1.png';
-import sd2 from '../assets/slider2.png';
-import sd3 from '../assets/slider3.png';
-import sd4 from '../assets/slider4.png';
-import sd5 from '../assets/slider5.png';
+import sd1 from '../../assets/slider1.png';
+import sd2 from '../../assets/slider2.png';
+import sd3 from '../../assets/slider3.png';
+import sd4 from '../../assets/slider4.png';
+import sd5 from '../../assets/slider5.png';
 import { BiLocationPlus } from 'react-icons/bi';
 import { SiGooglemaps } from 'react-icons/si';
 

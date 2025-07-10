@@ -1,19 +1,19 @@
 import React from 'react';
-import bs1 from '../assets/bestService1.png';
-import bs2 from '../assets/bestService2.png';
-import bs3 from '../assets/bestService3.png';
-import bs4 from '../assets/bestService4.png';
-import bs5 from '../assets/bestService5.png';
-import bs6 from '../assets/bestService6.png';
-import commonIcon from '../assets/commonIcon.png';
+import bs1 from '../../assets/bestService1.png';
+import bs2 from '../../assets/bestService2.png';
+import bs3 from '../../assets/bestService3.png';
+import bs4 from '../../assets/bestService4.png';
+import bs5 from '../../assets/bestService5.png';
+import bs6 from '../../assets/bestService6.png';
+import commonIcon from '../../assets/commonIcon.png';
 import { Row, Col, Card, Typography } from 'antd';
 
 const { Title, Paragraph, Link } = Typography;
 
 
 // Decorative assets
-import leftbgBestSvc from '../assets/downrightbgBestSvc.png';
-import downrightbgBestSvc from '../assets/leftbgBestSvc.png';
+import leftbgBestSvc from '../../assets/downrightbgBestSvc.png';
+import downrightbgBestSvc from '../../assets/leftbgBestSvc.png';
 
 const BestServices = () => {
     const serviceData = [

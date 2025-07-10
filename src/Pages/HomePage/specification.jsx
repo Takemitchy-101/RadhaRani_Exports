@@ -1,10 +1,10 @@
 import React from 'react'
-import spc1 from '../assets/spc1.png'
-import spc2 from '../assets/spc2.png'
-import spc3 from '../assets/spc3.png'
-import spc4 from '../assets/spc4.png'
-import spc5 from '../assets/spc5.png'
-import lastbg from '../assets/lastBG.png'
+import spc1 from '../../assets/spc1.png'
+import spc2 from '../../assets/spc2.png'
+import spc3 from '../../assets/spc3.png'
+import spc4 from '../../assets/spc4.png'
+import spc5 from '../../assets/spc5.png'
+import lastbg from '../../assets/lastBG.png'
 import { Row, Col } from 'antd'
 
 export const Specification = () => {

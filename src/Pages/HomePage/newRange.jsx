@@ -1,11 +1,11 @@
 import React from 'react';
-import commonIcon from '../assets/commonIcon.png';
-import newRangeBG3 from '../assets/newRangeBG3.png';
-import newRangeBG4 from '../assets/newRangeBG4.png';
-import pd1 from '../assets/product1.png';
-import pd2 from '../assets/product2.png';
-import pd3 from '../assets/product3.png';
-import pd4 from '../assets/product4.png';
+import commonIcon from '../../assets/commonIcon.png';
+import newRangeBG3 from '../../assets/newRangeBG3.png';
+import newRangeBG4 from '../../assets/newRangeBG4.png';
+import pd1 from '../../assets/product1.png';
+import pd2 from '../../assets/product2.png';
+import pd3 from '../../assets/product3.png';
+import pd4 from '../../assets/product4.png';
 import { Row, Col, Button } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 

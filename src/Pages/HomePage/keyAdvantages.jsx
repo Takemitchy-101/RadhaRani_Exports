@@ -1,8 +1,8 @@
 import React from 'react';
-import mainIg from '../assets/keyAdMain.png'; // left side image
-import logo1 from '../assets/keyAdlogo1.png'; // award icon
-import logo2 from '../assets/keyAdlogo2.png'; // leaf icon
-import logo3 from '../assets/keyAdlogo3.png'; // bowl icon
+import mainIg from '../../assets/keyAdMain.png'; // left side image
+import logo1 from '../../assets/keyAdlogo1.png'; // award icon
+import logo2 from '../../assets/keyAdlogo2.png'; // leaf icon
+import logo3 from '../../assets/keyAdlogo3.png'; // bowl icon
 import { Row, Col, Button } from 'antd';
 
 export const KeyAdvantages = () => {
@@ -17,7 +17,7 @@ export const KeyAdvantages = () => {
             id: 2,
             image: logo2,
             heading: "Quality Products",
-            des: "We are committed to providing the finest, ensuring every product meets the highest standards of excellence. You can trust in our dedication to delivering superior quality that truly makes a difference.",
+            des: "We are committed to providing../../ the finest, ensuring every product meets the highest standards of excellence. You can trust in our dedication to delivering superior quality that truly makes a difference.",
         },
         {
             id: 3,

@@ -1,9 +1,9 @@
 import React from 'react';
-import commonIcon from '../assets/commonIcon.png';
-import pf1 from '../assets/portf1.png';
-import pf2 from '../assets/portf2.png';
-import pf3 from '../assets/portf3.png';
-import pf4 from '../assets/portf4.png';
+import commonIcon from '../../assets/commonIcon.png';
+import pf1 from '../../assets/portf1.png';
+import pf2 from '../../assets/portf2.png';
+import pf3 from '../../assets/portf3.png';
+import pf4 from '../../assets/portf4.png';
 
 const Portfolio = () => {
   return (

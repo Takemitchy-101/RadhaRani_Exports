@@ -93,12 +93,12 @@
 
 
 import React from 'react';
-import bgImage from '../assets/needBG.png';
-import commonIcon from '../assets/needLogo.png';
-import logo1 from '../assets/needIcon1.png';
-import logo2 from '../assets/needIcon2.png';
-import logo3 from '../assets/needIcon3.png';
-import logo4 from '../assets/needIcon4.png';
+import bgImage from '../../assets/needBG.png';
+import commonIcon from '../../assets/needLogo.png';
+import logo1 from '../../assets/needIcon1.png';
+import logo2 from '../../assets/needIcon2.png';
+import logo3 from '../../assets/needIcon3.png';
+import logo4 from '../../assets/needIcon4.png';
 import { Row, Col } from 'antd';
 
 const WhatYouNeed = () => {
