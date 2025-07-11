@@ -15,6 +15,7 @@ import {
   FaLinkedinIn,
 } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
+import iol from '../assets/indianOilLogo.png';
 
 const Navbar = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
@@ -49,8 +50,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className ={ ` text-white w-full shadow ${
-isHome ? "bg-transparent" : "bg-gradient-to-br from-emerald-700 to-emerald-700 !sticky"
+    <nav className={` text-white w-full shadow ${isHome ? "bg-transparent" : "bg-gradient-to-br from-emerald-700 to-emerald-700 !sticky"
       }`}>
       {/* Top Row: Logo + Social */}
       <div className="flex justify-between items-center px-3 border-b border-white/20">
@@ -69,11 +69,20 @@ isHome ? "bg-transparent" : "bg-gradient-to-br from-emerald-700 to-emerald-700 !
         </div>
 
         {/* Social Icons */}
-        <div className="hidden md:flex space-x-15 items-center md:mr-15 ">
-          <XOutlined className="hover:text-green-300 cursor-pointer text-2xl" />
+        {/* <XOutlined className="hover:text-green-300 cursor-pointer text-2xl" />
           <FaFacebookF className="hover:text-green-300 cursor-pointer text-2xl" />
           <FaInstagram className="hover:text-green-300 cursor-pointer text-2xl" />
-          <FaLinkedinIn className="hover:text-green-300 cursor-pointer text-2xl" />
+          <FaLinkedinIn className="hover:text-green-300 cursor-pointer text-2xl" /> */}
+        <div className="hidden md:flex items-center gap-4 px-4 py-2 bg-green-250 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group">
+          <img
+            src={iol}
+            alt="Indian Oil Logo"
+            className="h-[50px] w-[50px] object-contain transform group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="text-white text-sm font-semibold leading-snug">
+            <div className="group-hover:text-green-200 transition-colors duration-300">Leading Distributor</div>
+            <div className="group-hover:text-green-200 transition-colors duration-300">of Wax & Oil Solutions</div>
+          </div>
         </div>
       </div>
 
@@ -86,7 +95,7 @@ isHome ? "bg-transparent" : "bg-gradient-to-br from-emerald-700 to-emerald-700 !
               Shop <DownOutlined />
             </a>
           </Dropdown>
-          <Link to="/aboutUs" className="!text-white hover:text-green-300 text-lg">About</Link>
+          <Link to="#" className="!text-white hover:text-green-300 text-lg">About</Link>
           <Dropdown overlay={pagesMenu} arrow>
             <a href="#" onClick={(e) => e.preventDefault()} className="!text-white hover:text-green-300 text-lg">
               Pages <DownOutlined />

@@ -1,8 +1,11 @@
 import React from 'react';
 import commonIcon from '../../assets/commonIcon.png';
 import pf1 from '../../assets/portf1.png';
-import pf2 from '../../assets/portf2.png';
+import pf2 from '../../assets/portf21.png';
 import pf3 from '../../assets/portf3.png';
+import pf31 from '../../assets/portf31.png';
+import pf41 from '../../assets/portf41.png';
+import pf5 from '../../assets/portf5.png';
 import pf4 from '../../assets/portf4.png';
 
 const Portfolio = () => {
@@ -27,15 +30,15 @@ const Portfolio = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         {/* Left Large Image */}
         <div className="w-full">
-          <img src={pf1} alt="Portfolio 1" className="portfolio-image" />
+          <img src={pf31} alt="Portfolio 1" className="portfolio-image" />
         </div>
 
         {/* Right 2x2 Grid */}
         <div className="grid grid-cols-2 gap-6">
-          <img src={pf3} alt="Portfolio 2" className="portfolio-image" />
-          <img src={pf3} alt="Portfolio 3" className="portfolio-image" />
-          <img src={pf4} alt="Portfolio 4" className="portfolio-image" />
-          <img src={pf4} alt="Portfolio 5" className="portfolio-image" />
+          <img src={pf2} alt="Portfolio 2" className="portfolio-image" />
+          <img src={pf1} alt="Portfolio 3" className="portfolio-image" />
+          <img src={pf41} alt="Portfolio 4" className="portfolio-image" />
+          <img src={pf5} alt="Portfolio 5" className="portfolio-image" />
         </div>
       </div>
     </div>

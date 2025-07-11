@@ -27,7 +27,7 @@ export const Hero = () => {
       />
 
       {/* Content */}
-      <div className="h-full flex flex-col justify-center px-5 md:px-16 lg:py-25">
+      <div className="h-full flex flex-col justify-center px-5 md:px-16 lg:py-15 mb-5">
         <Row gutter={[24, 24]} className="items-center">
           {/* Left Column: Text */}
           <Col
@@ -61,12 +61,12 @@ export const Hero = () => {
             <div className="relative group w-full h-auto max-w-[400px] md:max-w-[600px] lg:max-w-[711px] lg:-mt-[50px]">
 
               {/* Wrapper for the image group */}
-              <div className="relative group w-full h-auto">
+              <div className="relative group w-full h-auto ">
                 {/* Main Image */}
                 <img
                   src={mainPimage}
                   alt="Main"
-                  className="w-full h-auto hidden md:block  sm:block object-contain transition-opacity duration-500 ease-in-out group-hover:opacity-0"
+                  className="w-full h-[500px]  hidden md:block  sm:block object-contain transition-opacity duration-500 ease-in-out group-hover:opacity-0"
                 />
 
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 grid grid-cols-2 gap-10 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out">

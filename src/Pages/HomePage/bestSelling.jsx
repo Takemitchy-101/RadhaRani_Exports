@@ -1,11 +1,10 @@
 import React from 'react';
-import Marquee from "react-fast-marquee";
 import commonIcon from '../../assets/commonIcon.png';
 import bg1 from '../../assets/bestSellBG1.png';
 import bg2 from '../../assets/bestSellBG2.png';
 import pd1 from '../../assets/product1.png';
 import pd2 from '../../assets/product2.png';
-import pd3 from '../../assets/product3.png';
+import pd3 from '../../assets/product3.jpg';
 import pd4 from '../../assets/product4.png';
 import pd5 from '../../assets/product5.png';
 import pd6 from '../../assets/product6.png';
@@ -14,37 +13,36 @@ import pd8 from '../../assets/product8.png';
 import pd9 from '../../assets/product9.png';
 import pd10 from '../../assets/product10.png';
 import pd11 from '../../assets/product11.png';
-import { Row, Col, Button, Tooltip } from 'antd';
-import { ShoppingCartOutlined } from '@ant-design/icons';
+import { Row, Col, Tooltip } from 'antd';
 import Flag from 'react-world-flags';
+import { FaGlobeAsia } from 'react-icons/fa';
+
+const countryCodeMap = {
+  IN: 'India',
+  NP: 'Nepal',
+  BD: 'Bangladesh',
+  LK: 'Sri Lanka',
+  BT: 'Bhutan',
+};
 
 export const BestSelling = () => {
   const productData = [
-    { id: 1, Image: pd1, pdname: 'Ashwagandha', price: '₹60.00 - ₹70.00', rating: '★★★★★', countries: ['IN', 'NP', 'BD', 'LK', 'BT'] },
-    { id: 2, Image: pd2, pdname: 'Triphala', price: '₹60.00 - ₹70.00', rating: '★★★★☆', countries: ['IN', 'NP', 'BD'] },
-    { id: 3, Image: pd3, pdname: 'Multani Mitti', price: '₹60.00 - ₹70.00', rating: '★★★★☆', countries: ['IN', 'LK', 'BT'] },
-    { id: 4, Image: pd4, pdname: 'Chia Seeds', price: '₹60.00 - ₹70.00', rating: '★★★★★', countries: ['IN', 'BT'] },
-    { id: 5, Image: pd5, pdname: 'SandalWood', price: '₹60.00 - ₹70.00', rating: '★★★★☆', countries: ['IN', 'BD', 'LK', 'BT'] },
-    { id: 6, Image: pd6, pdname: 'Isabgul Husk', price: '₹60.00 - ₹70.00', rating: '★★★★☆', countries: ['IN', 'NP', 'BT'] },
-    { id: 7, Image: pd7, pdname: 'Senna Leaves', price: '₹60.00 - ₹70.00', rating: '★★★★★', countries: ['IN', 'NP', 'LK', 'BT'] },
-    { id: 8, Image: pd8, pdname: 'Sugar Badam', price: '₹60.00 - ₹70.00', rating: '★★★★☆', countries: ['IN', 'NP', 'BD', 'LK', 'BT'] },
-    { id: 9, Image: pd9, pdname: 'Flax Seeds', price: '₹60.00 - ₹70.00', rating: '★★★★★', countries: ['IN', 'NP', 'BD', 'LK', 'BT'] },
-    { id: 10, Image: pd10, pdname: 'Guggal', price: '₹60.00 - ₹70.00', rating: '★★★★☆', countries: ['IN', 'NP', 'BD', 'LK', 'BT'] },
-    { id: 11, Image: pd11, pdname: 'Amla Dry', price: '₹60.00 - ₹70.00', rating: '★★★★☆', countries: ['IN', 'NP', 'BD', 'LK', 'BT'] },
-    { id: 12, Image: pd4, pdname: 'Ashwagandha', price: '₹60.00 - ₹70.00', rating: '★★★★★', countries: ['IN', 'NP', 'BD', 'LK', 'BT'] },
+    { id: 1, Image: pd1, pdname: 'Ashwagandha' },
+    { id: 2, Image: pd2, pdname: 'Triphala' },
+    { id: 3, Image: pd3, pdname: 'Multani Mitti' },
+    { id: 4, Image: pd4, pdname: 'Chia Seeds' },
+    { id: 5, Image: pd5, pdname: 'SandalWood' },
+    { id: 6, Image: pd6, pdname: 'Isabgul Husk' },
+    { id: 7, Image: pd7, pdname: 'Senna Leaves' },
+    { id: 8, Image: pd8, pdname: 'Sugar Badam' },
+    { id: 9, Image: pd9, pdname: 'Flax Seeds' },
+    { id: 10, Image: pd10, pdname: 'Guggal' },
+    { id: 11, Image: pd11, pdname: 'Amla Dry' },
+    { id: 12, Image: pd4, pdname: 'Ashwagandha' },
   ];
 
-  const countryCodeMap = {
-    IN: 'India',
-    NP: 'Nepal',
-    BD: 'Bangladesh',
-    LK: 'Sri Lanka',
-    BT: 'Bhutan',
-  };
+  const uniqueCountries = ['IN', 'NP', 'BD', 'LK', 'BT'];
 
-  const uniqueCountries = Array.from(
-    new Set(productData.flatMap((item) => item.countries))
-  );
   return (
     <div className="relative w-full bg-[#EEFFEE] py-8 md:py-5">
       {/* Background Decorations */}
@@ -71,19 +69,23 @@ export const BestSelling = () => {
         <div className="max-h-[600px] overflow-y-auto custom-scrollbar p-5">
           <Row gutter={[24, 24]}>
             {productData.map((item) => (
-              <Col key={item.id} xs={24} sm={12} md={8} lg={6} className="transition-transform transform hover:scale-105">
+              <Col
+                key={item.id}
+                xs={24}
+                sm={12}
+                md={8}
+                lg={6}
+                className="transition-transform transform hover:scale-105"
+              >
                 <div className="relative bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center text-center">
-                  <img src={item.Image} alt={item.pdname} className="w-full h-48 object-cover rounded-xl" />
-                  <h3 className="mt-4 text-lg font-semibold text-gray-800 headFont">{item.pdname}</h3>
-                  {/* <p className="text-gray-500 mt-1 subFont">{item.price}</p> */}
-                  <p className="text-yellow-500 text-sm headFont">{item.rating}</p>
-                  <Button
-                    type="default"
-                    icon={<ShoppingCartOutlined />}
-                    className="mt-4 w-full headFont !font-semibold !border-green-500 !text-green-600 hover:!text-white hover:!bg-green-700 hover:!border-green-600 !rounded-lg !shadow-md !transition !duration-300"
-                  >
-                    Add to Cart
-                  </Button>
+                  <img
+                    src={item.Image}
+                    alt={item.pdname}
+                    className="w-full h-48 object-cover rounded-xl"
+                  />
+                  <h3 className="mt-4 text-lg font-semibold text-gray-800 headFont">
+                    {item.pdname}
+                  </h3>
                 </div>
               </Col>
             ))}
@@ -91,39 +93,33 @@ export const BestSelling = () => {
         </div>
       </div>
 
-      {/* <div className="marquee-container">
-        <div className="marquee-track">
-          {[...uniqueCountries, ...uniqueCountries].map((code, idx) => (
-            <div key={idx} className="marquee-flag">
+      {/* Exporting To Section */}
+      <div className="px-4 py-10">
+        {/* Section Header */}
+        <div className="flex items-center justify-center gap-3 mb-6 flex-wrap text-center">
+          <FaGlobeAsia className="text-green-500 text-3xl" />
+          <h2 className="text-xl md:text-2xl font-bold text-green-700 head">
+            Exporting Countries:
+          </h2>
+        </div>
+
+        {/* Flags Scrollable Container */}
+        <div className="flex justify-center overflow-x-auto md:overflow-x-visible gap-4 flex-wrap px-4">
+          {uniqueCountries.map((code, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center space-y-1 min-w-[80px] hover:scale-105 transition-transform duration-300"
+            >
               <Tooltip title={countryCodeMap[code] || code}>
-                <Flag code={code} />
+                <Flag code={code} className="w-8 h-6 rounded shadow-md" />
               </Tooltip>
-              <span>{countryCodeMap[code] || code}</span>
+              <span className="text-sm text-gray-700 font-medium text-center">
+                {countryCodeMap[code] || code}
+              </span>
             </div>
           ))}
         </div>
-      </div> */}
-
-      {/* <div class="marquee">
-        <div class="marquee__item">
-          There is quite a good deal of content over here.
-        </div>
-        <div class="marquee__item">
-          There is quite a good deal of content over here.
-        </div>
-      </div> */}
-      
-      <Marquee>
-        {[...uniqueCountries, ...uniqueCountries].map((code, idx) => (
-          <div key={idx} className="marquee-flag">
-            <Tooltip title={countryCodeMap[code] || code}>
-              <Flag code={code} />
-            </Tooltip>
-            <span>{countryCodeMap[code] || code}</span>
-          </div>
-        ))}
-      </Marquee>
-
+      </div>
     </div>
   );
 };

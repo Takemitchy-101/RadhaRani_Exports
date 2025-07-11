@@ -1,3 +1,7 @@
+import AboutUs from '../AboutPage/aboutUs'
+import Establishment from '../AboutPage/establishment'
+import GlobalExpansion from '../AboutPage/globalExpansion'
+import Mission from '../AboutPage/mission'
 import BestSelling from './bestSelling'
 import BestServices from './bestServices'
 // import BottomBar from './bottombar'
@@ -20,15 +24,18 @@ export const Home = () => {
             <Hero />
             <ProductType />
             {/* <NewRange/> */}
+            <Establishment/>
+            <BestSelling />
             <BestServices />
             <WhatYouNeed />
-            <BestSelling />
-            <CustomerReview />
+            {/* <CustomerReview /> */}
+            <GlobalExpansion/>
             <KeyAdvantages />
+            <Mission/>
             <Portfolio />
-            <Emailsub />
+            {/* <Emailsub /> */}
             {/* <TeamDes/> */}
-            <LatestNews />
+            {/* <LatestNews /> */}
             <Specification />
             <SliderImage />
             {/* <BottomBar /> */}

@@ -15,14 +15,14 @@ import { SiGooglemaps } from "react-icons/si";
 
 export const BottomBar = () => {
   const footerSections = [
-    {
-      title: 'Company',
-      links: ['About', 'Careers', 'Brand Center', 'Blog'],
-    },
-    {
-      title: 'Help Center',
-      links: ['Discord Server', 'Twitter', 'Facebook', 'Contact Us'],
-    },
+    // {
+    //   title: 'Company',
+    //   links: ['About', 'Careers', 'Brand Center', 'Blog'],
+    // },
+    // {
+    //   title: 'Help Center',
+    //   links: ['Discord Server', 'Twitter', 'Facebook', 'Contact Us'],
+    // },
     {
       title: 'Exporting Countries',
       links: [
@@ -76,7 +76,7 @@ export const BottomBar = () => {
               sm={12}
               md={6}
               lg={5}
-              xl={4}
+              xl={6}
               className="text-center flex flex-col items-center"
             >
               <h2 className="mb-4 text-sm font-semibold text-white uppercase headFont">
@@ -129,7 +129,7 @@ export const BottomBar = () => {
           © 2025 <a href="#" className="hover:underline headFont">Radharani Exports</a>. All Rights Reserved.
         </span>
 
-        <div className="flex space-x-8 md:ml-8">
+        {/* <div className="flex space-x-8 md:ml-8">
           <a href="#" aria-label="Twitter">
             <XOutlined className="text-2xl hover:text-white cursor-pointer" />
           </a>
@@ -142,7 +142,7 @@ export const BottomBar = () => {
           <a href="#" aria-label="LinkedIn">
             <LinkedinFilled className="text-2xl hover:text-white cursor-pointer" />
           </a>
-        </div>
+        </div> */}
       </div>
 
     </footer>

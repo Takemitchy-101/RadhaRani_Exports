@@ -6,14 +6,10 @@ import {
     AimOutlined,
 } from "@ant-design/icons";
 import { FaLeaf, FaGlobe, FaCalendarAlt } from "react-icons/fa";
-import img1 from '../../assets/aboutimg1.jpeg';
-import img2 from '../../assets/aboutimg2.jpeg';
-import img3 from '../../assets/aboutimg3.jpeg';
-import img4 from '../../assets/aboutimg4.jpeg';
-import Story from "./story";
 import ProductType from "./productType";
 import Mission from "./mission";
 import GlobalExpansion from "./globalExpansion";
+import Establishment from "./establishment";
 
 export const AboutUs = () => {
 
@@ -53,57 +49,7 @@ export const AboutUs = () => {
                 </div>
             </section>
 
-
-            {/* ////////////////// */}
-
-            <div className="py-12 px-6 md:px-16 bg-white mt-10">
-                <Row gutter={[24, 24]}>
-                    {/* Left Section - Images and Badge */}
-                    <Col xs={24} md={13}>
-                        <Row gutter={[16, 16]}>
-                            {/* First Row */}
-                            <Col xs={24} sm={12}>
-                                <img
-                                    src={img1}
-                                    alt="Nature"
-                                    className="rounded-xl shadow-md w-full h-auto object-cover"
-                                />
-                            </Col>
-                            <Col xs={24} sm={12} className="sm:mt-18">
-                                <img
-                                    src={img2}
-                                    alt="Tree"
-                                    className="rounded-xl shadow-md w-full h-auto object-cover"
-                                />
-                            </Col>
-
-                            <Col xs={24} sm={12} className="sm:mt-2">
-                                <img
-                                    src={img3}
-                                    alt="Cake"
-                                    className="rounded-xl shadow-md w-full h-auto object-cover"
-                                />
-                            </Col>
-                            <Col xs={24} sm={12} className=" relative">
-                                <img
-                                    src={img4}
-                                    alt="Forest"
-                                    className="rounded-xl shadow-md w-full h-auto object-cover"
-                                />
-                                <div className="absolute -bottom-5 right-5 bg-white rounded-xl shadow-lg px-5 py-3 text-center">
-                                    <div className="text-xl font-bold text-green-700">12+</div>
-                                    <div className="text-sm text-gray-500">Years of Excellence</div>
-                                </div>
-                            </Col>
-                        </Row>
-                    </Col>
-                    {/* Right Section - Text and Highlights */}
-                    <Col xs={24} md={11}>
-                       <Story/>
-                    </Col>
-                </Row>
-            </div>
-
+            {/* <div><Establishment/></div> */}
             <div><ProductType/></div>
             <div><Mission/></div>
             <div><GlobalExpansion/></div>
