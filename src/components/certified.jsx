@@ -48,7 +48,7 @@ export const Certified = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {[
                             { label: "Confederation of All India Traders", img: cait },
-                            { label: "IndiaMart", img: "https://scontent.fidr4-1.fna.fbcdn.net/v/t39.30808-6/358449647_657270309776687_5599326795183758935_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=uvHt6FG2XoEQ7kNvwGHAVzJ&_nc_oc=AdnztKu9xk7pZMoxUsCoHfrC08gUfe4eHPtVThqsVlIks5-woW52VHnkOIzET8KolIcLUvfT-rcbzXreBSiduOIg&_nc_zt=23&_nc_ht=scontent.fidr4-1.fna&_nc_gid=1mrAVd1aqpSBx87be3XCBg&oh=00_AfS4lkymkEZtn4n_HPqwGRUO0GQm76U9dna88_mLTnZWGg&oe=687D7CB0" },
+                            { label: "IndiaMart", img: indiaMart },
                         ].map((item) => (
                             <div
                                 key={item.label}
