@@ -47,7 +47,7 @@ export const BottomBar = () => {
   ];
 
   return (
-    <footer className="relative w-full text-white">
+    <footer className="relative w-full text-white" id='contactUS'>
       {/* Background Image */}
       <div
         className="absolute top-0 left-0 w-full h-full -z-10"

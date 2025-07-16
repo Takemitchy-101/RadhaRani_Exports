@@ -1,3 +1,4 @@
+import Certified from '../../components/certified'
 import AboutUs from '../AboutPage/aboutUs'
 import Establishment from '../AboutPage/establishment'
 import GlobalExpansion from '../AboutPage/globalExpansion'
@@ -24,9 +25,9 @@ export const Home = () => {
             <Hero />
             <ProductType />
             {/* <NewRange/> */}
-            <Establishment/>
             <BestSelling />
             <BestServices />
+            <Establishment/>
             <WhatYouNeed />
             {/* <CustomerReview /> */}
             <GlobalExpansion/>
@@ -37,6 +38,7 @@ export const Home = () => {
             {/* <TeamDes/> */}
             {/* <LatestNews /> */}
             <Specification />
+            <Certified/>
             <SliderImage />
             {/* <BottomBar /> */}
         </>

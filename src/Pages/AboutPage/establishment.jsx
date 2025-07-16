@@ -10,7 +10,7 @@ import Story from "./story";
 export const Establishment = () => {
     return (
         <div>
-            <div className="text-center mt-10 z-10 relative">
+            <div className="text-center mt-10 z-10 relative " id="our-story">
                 <div className="flex items-center justify-center mb-">
                     <div className="custom-line" />
                     <div className="h-16 w-16 mx-6 flex items-center justify-center">

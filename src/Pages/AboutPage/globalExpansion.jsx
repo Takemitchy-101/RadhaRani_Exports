@@ -21,11 +21,11 @@ export const GlobalExpansion = () => {
           </div>
           <div className="custom-line" />
         </div>
-        <h2 className="allheading text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
-          Global Expansion
+        <h2 className="allheading  text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
+          Rooted in India, Reaching the World
         </h2>
-        <p className="alldes text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-2">
-          Spreading the essence of Ayurveda worldwide, blending ancient wisdom with modern lives across cultures and continents.
+        <p className=" alldes text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-2">
+          Delivering India’s finest herbs and wellness essentials across borders with trust and tradition.
         </p>
       </div>
 
@@ -91,7 +91,7 @@ export const GlobalExpansion = () => {
             >
               <div className="text-center space-y-6">
                 <Globe className="text-green-500 w-10 h-10 mx-auto animate-pulse" />
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-gray-800 headFont">
                   Global Network
                 </h3>
 

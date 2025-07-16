@@ -88,31 +88,29 @@ const Navbar = () => {
 
       <Row gutter={24} justify="center" align="middle" className="px-6 py-3">
 
-        <Col className="hidden md:flex items-center space-x-10 subFont">
+        <Col className="hidden md:flex items-center space-x-15 subFont">
           <Link to="/" className='!text-white hover:text-green-300 text-lg'>Home</Link>
-          <Dropdown overlay={shopMenu} arrow>
-            <a href="#" onClick={(e) => e.preventDefault()} className="!text-white hover:text-green-300 text-lg">
-              Shop <DownOutlined />
-            </a>
-          </Dropdown>
-          <Link to="#" className="!text-white hover:text-green-300 text-lg">About</Link>
-          <Dropdown overlay={pagesMenu} arrow>
+         
+         <a href="#categories" className="!text-white hover:text-green-300 text-lg">Categories</a>
+         <a href="#our-story" className="!text-white hover:text-green-300 text-lg">About</a>
+         <a href="#gallery" className="!text-white hover:text-green-300 text-lg">Gallery</a>
+          {/* <Dropdown overlay={pagesMenu} arrow>
             <a href="#" onClick={(e) => e.preventDefault()} className="!text-white hover:text-green-300 text-lg">
               Pages <DownOutlined />
             </a>
-          </Dropdown>
-          <a href="#" className="!text-white hover:text-green-300 text-lg">Contact</a>
+          </Dropdown> */}
+          <a href="#contactUS" className="!text-white hover:text-green-300 text-lg">Contact</a>
         </Col>
 
         {/* Right Icons (Desktop) */}
-        <Col className="hidden md:flex justify-end items-center space-x-7 ml-5 ">
+        {/* <Col className="hidden md:flex justify-end items-center space-x-7 ml-5 ">
           <UserOutlined className="hover:text-green-300 cursor-pointer text-2xl" />
           <div className="w-[2px] h-7 bg-gray-400" />
           <ShoppingCartOutlined className="hover:text-green-300 cursor-pointer text-2xl" />
           <Dropdown overlay={currencyMenu}>
             <a className="hover:text-green-300 !text-white text-lg">INR <DownOutlined /></a>
           </Dropdown>
-        </Col>
+        </Col> */}
       </Row>
 
 
@@ -129,7 +127,7 @@ const Navbar = () => {
         <div className="flex flex-col space-y-4 subFont">
           <a href="#" className='subFont !text-black '>Home</a>
           <Dropdown overlay={shopMenu}><a href="#" className='subFont !text-black'>Shop <DownOutlined /></a></Dropdown>
-          <Link to="/aboutUs" className='subFont !text-black'>About</Link>
+          <a href="#our-story" className='subFont !text-black'>About</a>
           <Dropdown overlay={pagesMenu}><a href="#" className='subFont !text-black'>Pages <DownOutlined /></a></Dropdown>
           <a href="#" className='subFont !text-black'>Contact</a>
           <hr />

@@ -1,21 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import commonIcon from '../../assets/commonIcon.png';
 import bg1 from '../../assets/bestSellBG1.png';
 import bg2 from '../../assets/bestSellBG2.png';
-import pd1 from '../../assets/product1.png';
-import pd2 from '../../assets/product2.png';
-import pd3 from '../../assets/product3.jpg';
-import pd4 from '../../assets/product4.png';
-import pd5 from '../../assets/product5.png';
-import pd6 from '../../assets/product6.png';
-import pd7 from '../../assets/product7.png';
-import pd8 from '../../assets/product8.png';
-import pd9 from '../../assets/product9.png';
-import pd10 from '../../assets/product10.png';
-import pd11 from '../../assets/product11.png';
-import { Row, Col, Tooltip } from 'antd';
 import Flag from 'react-world-flags';
 import { FaGlobeAsia } from 'react-icons/fa';
+import { productData } from '../../components/dataModel';
+import { Row, Col, Tooltip } from 'antd';
+
+// Dummy category images — replace with your own images
+import catAyurvedic from '../../assets/ayurvedaIcon.png';
+import catWax from '../../assets/waxIcon.png';
+import catchemical from '../../assets/chemicalIcon.png';
+import catMandO from '../../assets/oandmIcon.png';
 
 const countryCodeMap = {
   IN: 'India',
@@ -25,32 +21,31 @@ const countryCodeMap = {
   BT: 'Bhutan',
 };
 
-export const BestSelling = () => {
-  const productData = [
-    { id: 1, Image: pd1, pdname: 'Ashwagandha' },
-    { id: 2, Image: pd2, pdname: 'Triphala' },
-    { id: 3, Image: pd3, pdname: 'Multani Mitti' },
-    { id: 4, Image: pd4, pdname: 'Chia Seeds' },
-    { id: 5, Image: pd5, pdname: 'SandalWood' },
-    { id: 6, Image: pd6, pdname: 'Isabgul Husk' },
-    { id: 7, Image: pd7, pdname: 'Senna Leaves' },
-    { id: 8, Image: pd8, pdname: 'Sugar Badam' },
-    { id: 9, Image: pd9, pdname: 'Flax Seeds' },
-    { id: 10, Image: pd10, pdname: 'Guggal' },
-    { id: 11, Image: pd11, pdname: 'Amla Dry' },
-    { id: 12, Image: pd4, pdname: 'Ashwagandha' },
-  ];
+const BestSelling = () => {
+  const [selectedCategory, setSelectedCategory] = useState('Ayurvedic');
 
-  const uniqueCountries = ['IN', 'NP', 'BD', 'LK', 'BT'];
+  const categoryImages = {
+    Ayurvedic: catAyurvedic,
+    Wax: catWax,
+    'Natural Chemcials': catchemical,
+    'Metals And Oils': catMandO,
+  };
+
+
+  const filteredProducts = productData.filter(
+    (item) => item.category === selectedCategory
+  );
+
+  const uniqueCountries = ['NP', 'BD', 'LK', 'BT'];
 
   return (
     <div className="relative w-full bg-[#EEFFEE] py-8 md:py-5">
-      {/* Background Decorations */}
+      {/* Background decorations */}
       <img src={bg1} alt="decor" className="absolute left-0 w-[130px] md:w-[200px] opacity-80 pointer-events-none z-0" />
       <img src={bg2} alt="decor" className="absolute right-0 bottom-0 w-[300px] opacity-80 pointer-events-none z-0" />
 
       {/* Heading */}
-      <div className="text-center mb-16 z-10 relative">
+      <div className="text-center mb-10 z-10 relative" id='categories'>
         <div className="flex items-center justify-center mb-4">
           <div className="custom-line" />
           <div className="h-16 w-16 mx-6 flex items-center justify-center">
@@ -64,11 +59,38 @@ export const BestSelling = () => {
         </p>
       </div>
 
+      {/* Category Selector */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 px-4 max-w-[1280px] mx-auto">
+        {Object.entries(categoryImages).map(([category, image]) => (
+          <div
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`group cursor-pointer rounded-xl border-2 p-4 bg-[#c8f2c8] transition-all duration-300 ease-in-out flex flex-col items-center justify-center shadow-sm hover:shadow-xl hover:scale-[1.03]
+        ${selectedCategory === category
+                ? 'border-green-600 from-green-50 to-white'
+                : 'border-gray-200 from-white to-gray-50'
+              }`}
+          >
+            <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-md group-hover:shadow-lg transition duration-300">
+              <img
+                src={image}
+                alt={category}
+                className="w-17 h-17 object-contain transition-transform duration-300"
+              />
+            </div>
+            <span className="mt-3 text-sm sm:text-base font-semibold text-black transition-colors duration-300 text-center">
+              {category}
+            </span>
+          </div>
+        ))}
+      </div>
+
+
       {/* Product Cards */}
       <div className="px-4 max-w-[1280px] mx-auto z-10 relative">
         <div className="max-h-[600px] overflow-y-auto custom-scrollbar p-5">
           <Row gutter={[24, 24]}>
-            {productData.map((item) => (
+            {filteredProducts.map((item) => (
               <Col
                 key={item.id}
                 xs={24}
@@ -93,17 +115,14 @@ export const BestSelling = () => {
         </div>
       </div>
 
-      {/* Exporting To Section */}
+      {/* Export Section */}
       <div className="px-4 py-10">
-        {/* Section Header */}
         <div className="flex items-center justify-center gap-3 mb-6 flex-wrap text-center">
           <FaGlobeAsia className="text-green-500 text-3xl" />
           <h2 className="text-xl md:text-2xl font-bold text-green-700 head">
             Exporting Countries:
           </h2>
         </div>
-
-        {/* Flags Scrollable Container */}
         <div className="flex justify-center overflow-x-auto md:overflow-x-visible gap-4 flex-wrap px-4">
           {uniqueCountries.map((code, idx) => (
             <div

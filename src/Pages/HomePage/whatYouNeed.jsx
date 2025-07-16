@@ -106,26 +106,26 @@ const WhatYouNeed = () => {
     {
       id: 1,
       Image: logo1,
-      title: "Organic Product",
-      subtitle: "Harvested ethically, chemical-free, promoting well-being naturally.",
+      title: "Raw Herbal Ingredients",
+      subtitle: "Sourced directly from farms—natural, unprocessed, and potent.",
     },
     {
       id: 2,
       Image: logo2,
-      title: "Extraction Procedure",
-      subtitle: "Isolating specific substances from complex materials effectively and precisely.",
+      title: "Direct Sourcing",
+      subtitle: "We work directly with cultivators for traceable, high-quality sourcing..",
     },
     {
       id: 3,
       Image: logo3,
-      title: "Formulations",
-      subtitle: "Combining substances accurately to achieve specific product characteristics.",
+      title: "Bulk Supply Solutions",
+      subtitle: "Efficient logistics and custom packaging for global Ayurveda buyers.",
     },
     {
       id: 4,
       Image: logo4,
-      title: "Delivery",
-      subtitle: "Ensuring products reach destinations efficiently and securely.",
+      title: "Global Exports",
+      subtitle: "Supplying Ayurvedic raw materials worldwide with efficiency and care..",
     },
   ];
 
@@ -151,10 +151,10 @@ const WhatYouNeed = () => {
           <div className="h-px w-20 bg-white" />
         </div>
         <h2 className="text-3xl sm:text-4xl font-semibold text-white headFont">
-          We Are What You Need
+          Raw. Authentic. Ayurvedic.
         </h2>
         <p className="text-base sm:text-lg text-white mt-4 max-w-3xl mx-auto subFont">
-          Your journey to natural wellness begins here, with our trusted range of solutions for every need.
+         Delivering premium-grade Ayurvedic raw ingredients for formulations, wellness brands, and exporters worldwide.
         </p>
       </div>
 

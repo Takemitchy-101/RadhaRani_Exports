@@ -17,12 +17,12 @@ import downrightbgBestSvc from '../../assets/leftbgBestSvc.png';
 
 const BestServices = () => {
     const serviceData = [
-        { id: 1, image: bs1, heading: 'Ayurvedic Medicine', des: 'Pure ayurvedic remedies for holistic health, trusted and effective.' },
-        { id: 2, image: bs2, heading: 'EcoDelivery', des: 'Sustainable, eco-friendly delivery ensuring fresh, responsibly transported products.' },
-        { id: 3, image: bs3, heading: '100 % Natural Edibles', des: 'Pure, natural edibles for wellness, free from artificial additives.' },
-        { id: 4, image: bs4, heading: 'No Extracts used', des: 'Whole, natural ingredients only, preserving authentic ayurvedic potency.' },
-        { id: 5, image: bs5, heading: '100% Natural Herbs', des: 'Authentic, sustainably sourced herbs for health and culinary uses.' },
-        { id: 6, image: bs6, heading: 'Safe & Legal', des: 'Compliant, safe products meeting global standards for your trust.' },
+        { id: 1, image: bs1, heading: 'Raw Ayurvedic Ingredients', des: 'Sourced directly from nature—our raw herbs and ingredients retain maximum potency for authentic Ayurvedic formulations..' },
+        { id: 2, image: bs2, heading: 'Farm-to-Factory Purity', des: 'Direct sourcing from trusted farms ensures chemical-free, unprocessed herbs for complete traceability and purity.' },
+        { id: 3, image: bs3, heading: 'Manufacturer Supply Chain', des: 'We specialize in supplying high-quality Ayurvedic raw materials in bulk—ideal for wellness brands, pharmacies, and processors.' },
+        { id: 4, image: bs4, heading: ' Heritage Crop Techniques', des: 'Our herbs are handpicked using ancient Vedic practices to preserve their natural healing essence.' },
+        { id: 5, image: bs5, heading: '100% Natural Herbs', des: 'Pure, chemical-free herbs sourced from nature to support holistic wellness and traditional healing.' },
+        { id: 6, image: bs6, heading: 'Custom Sourcing Solutions', des: 'Custom herb sourcing available for personalized Ayurvedic and holistic health solutions.' },
     ];
 
     return (
@@ -48,9 +48,9 @@ const BestServices = () => {
                     </div>
                     <div className="custom-line" />
                 </div>
-                <h2 className="allheading">Green Wellness Solutions</h2>
+                <h2 className="allheading">Trusted Ayurveda, Rooted in Nature</h2>
                 <p className="alldes">
-                    Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
+                    Supplying premium, lab-tested Ayurvedic herbs and ingredients—trusted by health brands, practitioners, and manufacturers worldwide.
                 </p>
             </div>
 
@@ -60,7 +60,7 @@ const BestServices = () => {
                         <div key={item.id} className="text-left border-1 border-gray-200 p-10 rounded-md shadow-sm cursor-pointer hover:scale-95 duration-100">
                             <div className=''>
 
-                                <img src={item.image} alt={item.heading} className="w-30 h-30 object-contain flex-shrink-0" />
+                                <img src={item.image} alt={item.heading} className="w-35 h-35 object-contain flex-shrink-0" />
 
                                 <div className="flex flex-col justify-center space-y-2">
                                     <h3 className="text-2xl font-semibold text-black my-3 headFont">{item.heading}</h3>
@@ -82,125 +82,4 @@ const BestServices = () => {
 
 export default BestServices;
 
-
-// import React, { useState } from 'react';
-// import { Row, Col, Typography, Card } from 'antd';
-// import bs1 from '../assets/bestService1.png';
-// import bs2 from '../assets/bestService2.png';
-// import bs3 from '../assets/bestService3.png';
-// import bs4 from '../assets/bestService4.png';
-// import bs5 from '../assets/bestService5.png';
-// import bs6 from '../assets/bestService6.png';
-// import commonIcon from '../assets/commonIcon.png';
-// import leftbgBestSvc from '../assets/downrightbgBestSvc.png';
-// import downrightbgBestSvc from '../assets/leftbgBestSvc.png';
-
-// const { Title, Paragraph } = Typography;
-
-// const BestServices = () => {
-//     const serviceData = [
-//         { id: 1, image: bs1, heading: 'Ayurvedic Medicine', des: 'Operates within regulations, ensuring safety and legal compliance' },
-//         { id: 2, image: bs2, heading: 'EcoDelivery', des: 'Operates within regulations, ensuring safety and legal compliance' },
-//         { id: 3, image: bs3, heading: '100 % Natural Edibles', des: 'Operates within regulations, ensuring safety and legal compliance' },
-//         { id: 4, image: bs4, heading: 'No Extracts used', des: 'Operates within regulations, ensuring safety and legal compliance' },
-//         { id: 5, image: bs5, heading: '100% Natural Herbs', des: 'Operates within regulations, ensuring safety and legal compliance' },
-//         { id: 6, image: bs6, heading: 'Safe & Legal', des: 'Operates within regulations, ensuring safety and legal compliance' },
-//     ];
-
-//     // Track hover states
-//     const [hoveredCard, setHoveredCard] = useState(null);
-
-//     return (
-//         <div style={{
-//             position: 'relative',
-//             padding: '80px 20px',
-//             background: '#fff',
-//             overflow: 'hidden',
-//         }}>
-//             {/* Background Images */}
-//             <img
-//                 src={downrightbgBestSvc}
-//                 alt="decor"
-//                 style={{
-//                     position: 'absolute',
-//                     top: 0,
-//                     left: 0,
-//                     width: 180,
-//                     opacity: 0.8,
-//                     pointerEvents: 'none',
-//                     zIndex: 0,
-//                 }}
-//             />
-//             <img
-//                 src={leftbgBestSvc}
-//                 alt="decor"
-//                 style={{
-//                     position: 'absolute',
-//                     bottom: 0,
-//                     right: 0,
-//                     width: 140,
-//                     opacity: 0.6,
-//                     pointerEvents: 'none',
-//                     zIndex: 0,
-//                 }}
-//             />
-
-//             <div style={{ textAlign: 'center', marginBottom: 64, position: 'relative', zIndex: 1 }}>
-//                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 16 }}>
-//                     <div style={{ height: 2, width: 50, backgroundColor: '#000' }} />
-//                     <div style={{ height: 64, width: 64, margin: '0 20px' }}>
-//                         <img src={commonIcon} alt="icon" style={{ height: '100%', width: '100%', objectFit: 'contain' }} />
-//                     </div>
-//                     <div style={{ height: 2, width: 50, backgroundColor: '#000' }} />
-//                 </div>
-//                 <Title level={2} style={{ fontWeight: 600, margin: 0 }}>Our Best Services</Title>
-//                 <Paragraph style={{
-//                     fontSize: 16,
-//                     maxWidth: 700,
-//                     margin: '16px auto 0',
-//                     color: '#666'
-//                 }}>
-//                     Experience unmatched quality with our top-rated service, designed to exceed your expectations every time.
-//                 </Paragraph>
-//             </div>
-
-//             {/* Service Grid */}
-//             <Row gutter={[24, 24]} justify="center" style={{ position: 'relative', zIndex: 1 }}>
-//                 {serviceData.map((item) => (
-//                     <Col key={item.id} xs={24} sm={12} md={8} lg={8} xl={8}>
-//                         <Card
-//                             hoverable
-//                             bordered
-//                             style={{
-//                                 borderRadius: 12,
-//                                 padding: 20,
-//                                 textAlign: 'left',
-//                                 transition: 'transform 0.3s ease',
-//                                 transform: hoveredCard === item.id ? 'scale(1.05)' : 'scale(1)',
-//                                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-//                                 height: '100%',
-//                             }}
-//                             onMouseEnter={() => setHoveredCard(item.id)}
-//                             onMouseLeave={() => setHoveredCard(null)}
-//                             bodyStyle={{ padding: 0 }}
-//                         >
-//                             <div style={{
-//                                 display: 'flex',
-//                                 flexDirection: 'column',
-//                                 gap: 12
-//                             }}>
-//                                 <img src={item.image} alt={item.heading} style={{ height: 60, width: 60, objectFit: 'contain' }} />
-//                                 <Title level={4} style={{ marginTop: 16, fontWeight: 600 }}>{item.heading}</Title>
-//                                 <Paragraph style={{ color: '#666' }}>{item.des}</Paragraph>
-//                                 <a href="#" style={{ color: '#000', textDecoration: 'underline' }}>Read More</a>
-//                             </div>
-//                         </Card>
-//                     </Col>
-//                 ))}
-//             </Row>
-//         </div>
-//     );
-// };
-
-// export default BestServices;
 
