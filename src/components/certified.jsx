@@ -55,7 +55,7 @@ export const Certified = () => {
                                 className="flex flex-col items-center justify-center p-4 border rounded-lg shadow-md bg-white hover:shadow-lg transition-shadow duration-300"
                             >
                                 <img
-                                    src={item.img}
+                                    src={item.img} 
                                     alt={item.label}
                                     className="h-16 object-contain mb-3"
                                 />
