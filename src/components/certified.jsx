@@ -1,6 +1,6 @@
 import React from "react";
 import epr from "../assets/Epr.png";
-import indiaMart from "../assets/Indiamart.jpg";
+import indiaMart from "../assets/IndiaMart.jpg";
 import cait from "../assets/Cait.png";
 import spicesBoard from "../assets/SpicesBoard.jpg";
 import fssai from "../assets/Fssai.png";
