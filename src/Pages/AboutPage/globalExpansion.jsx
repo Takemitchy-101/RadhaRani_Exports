@@ -1,19 +1,47 @@
 import React from "react";
-import {
-  ArrowUpRight,
-  CheckCircle,
-  Globe,
-  MapPin,
-  PackageSearch,
-} from "lucide-react";
-import { Card, Row, Col } from "antd";
-import commonIcon from '../../assets/commonIcon.png';
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
+import { Card } from "antd";
+import { FaGlobeAsia, FaCheckCircle, FaHandshake } from "react-icons/fa";
+import commonIcon from "../../assets/commonIcon.png";
+import "leaflet/dist/leaflet.css";
+import { MapPin, PackageSearch } from "lucide-react";
 
-export const GlobalExpansion = () => {
+const INDIA = [22.5937, 78.9629];
+const DESTINATIONS = [
+  { name: "Nepal", coordinates: [28.3949, 84.124] },
+  { name: "Bhutan", coordinates: [27.5142, 90.4336] },
+  { name: "Bangladesh", coordinates: [23.685, 90.3563] },
+  { name: "Sri Lanka", coordinates: [7.8731, 80.7718] },
+  // { name: "USA", coordinates: [37.0902, -95.7129] },
+  // { name: "London", coordinates: [51.5074, -0.1278] },
+  // { name: "Melbourne", coordinates: [-37.8136, 144.9631] },
+  // { name: "Wellington", coordinates: [-41.2865, 174.7762] },
+];
+const features = [
+  {
+    icon: <FaGlobeAsia className="text-orange-500 text-xl" />,
+    title: "100% Natural Exports",
+    desc: "Every product meets international quality and certification standards",
+    bg: "bg-orange-50",
+  },
+  {
+    icon: <FaCheckCircle className="text-green-500 text-xl" />,
+    title: "FSSAI & GMP Certified",
+    desc: "Assuring safety, consistency, and quality in all global batches",
+    bg: "bg-green-50",
+  },
+  {
+    icon: <FaHandshake className="text-blue-500 text-xl" />,
+    title: "Growing Global Demand",
+    desc: "Increased interest in Ayurveda across South Asian nations",
+    bg: "bg-blue-50",
+  },
+];
+
+const GlobalReachSection = () => {
   return (
-    <div className="py-10 px-4 md:px-8">
-      {/* Section Header */}
-      <div className="text-center z-10 relative">
+    <div className="bg-[#f5fdf6] py-16 px-4 rounded-xl shadow-md max-w-[1280px] mx-auto mb-20">
+      <div className="text-center z-10 relative mb-12">
         <div className="flex items-center justify-center mb-4">
           <div className="custom-line" />
           <div className="h-16 w-16 mx-6 flex items-center justify-center">
@@ -21,128 +49,91 @@ export const GlobalExpansion = () => {
           </div>
           <div className="custom-line" />
         </div>
-        <h2 className="allheading  text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
           Rooted in India, Reaching the World
         </h2>
-        <p className=" alldes text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-2">
+        <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-2">
           Delivering India’s finest herbs and wellness essentials across borders with trust and tradition.
         </p>
       </div>
 
-      {/* Content */}
-      <div className="bg-gradient-to-br from-white to-green-50 mt-10 rounded-xl">
-        <Row gutter={[24, 32]} justify="center" align="middle" className="p-4 md:p-10">
-          {/* LEFT COLUMN */}
-          <Col xs={24} md={13}>
-            <div className="space-y-6">
-              <p className="text-green-500 text-xl font-semibold uppercase tracking-wide headFont">
-                Global Expansion
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 headFont">
-                Connecting Worldwide
-              </h2>
-              <p className="text-gray-700 text-base md:text-lg subFont">
-                With a strong emphasis on export, we aim to expand our reach globally, connecting with clients and partners around the world. Our dedication to customer satisfaction, combined with our extensive industry experience, positions us as a reliable source for all your herbal and petroleum product needs.
-              </p>
-              <p className="text-gray-700 text-base md:text-lg subFont">
-                Join us on our journey as we continue to grow and innovate, bringing the best of nature and quality to your doorstep. Thank you for choosing <strong>Radha Rani Exports!</strong>
-              </p>
-
-              {/* Mini Cards */}
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Card
-                  className="flex-1 min-w-[230px] max-w-[300px] rounded-2xl border border-gray-100 bg-white/70 hover:shadow-lg transition duration-300"
-                  bodyStyle={{ padding: "20px" }}
-                >
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="text-green-700 w-6 h-6 mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-gray-800 headFont">Based in Kolkata</h4>
-                      <p className="text-sm text-gray-600 subFont">
-                        West Bengal, India – Strategic location for trade
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card
-                  className="flex-1 min-w-[230px] max-w-[300px] rounded-2xl border border-gray-100 bg-white/70 hover:shadow-lg transition duration-300"
-                  bodyStyle={{ padding: "20px" }}
-                >
-                  <div className="flex items-start space-x-3">
-                    <PackageSearch className="text-blue-500 w-6 h-6 mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-gray-800 headFont">Export Focus</h4>
-                      <p className="text-sm text-gray-600 subFont">
-                        Worldwide shipping and distribution network
-                      </p>
-                    </div>
-                  </div>
-                </Card>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        {/* Left Side - Features + Cards */}
+        <div className="space-y-6">
+          {features.map((item, index) => (
+            <div key={index} className={`rounded-lg p-4 flex items-start gap-4 ${item.bg} shadow`}>
+              <div>{item.icon}</div>
+              <div>
+                <h4 className="font-semibold text-gray-800">{item.title}</h4>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             </div>
-          </Col>
+          ))}
 
-          {/* RIGHT COLUMN */}
-          <Col xs={24} md={11}>
+          {/* Additional Cards */}
+          <div className="flex flex-wrap gap-4 pt-4">
             <Card
-              className="rounded-3xl shadow-xl border-0 bg-gradient-to-br from-white to-orange-50 hover:shadow-2xl transition-all duration-300"
-              bodyStyle={{ padding: "32px" }}
+              className="flex-1 min-w-[230px] max-w-[300px] rounded-2xl border border-gray-100 bg-white/70 hover:shadow-lg transition duration-300"
+              bodyStyle={{ padding: "20px" }}
             >
-              <div className="text-center space-y-6">
-                <Globe className="text-green-500 w-10 h-10 mx-auto animate-pulse" />
-                <h3 className="text-xl font-semibold text-gray-800 headFont">
-                  Global Network
-                </h3>
-
-                <div className="space-y-4">
-                  {/* Feature 1 */}
-                  <div className="flex items-start space-x-3 bg-gradient-to-br from-orange-100 to-white p-4 rounded-lg hover:scale-[1.02] transition-all duration-300">
-                    <ArrowUpRight className="text-orange-500 mt-1" />
-                    <div className="text-left">
-                      <h4 className="font-semibold text-gray-800 headFont">
-                        Growing Exports
-                      </h4>
-                      <p className="text-sm text-gray-600 subFont">
-                        Expanding global market presence
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Feature 2 */}
-                  <div className="flex items-start space-x-3 bg-gradient-to-br from-green-100 to-white p-4 rounded-lg hover:scale-[1.02] transition-all duration-300">
-                    <CheckCircle className="text-green-500 mt-1" />
-                    <div className="text-left">
-                      <h4 className="font-semibold text-gray-800 headFont">
-                        Quality Assurance
-                      </h4>
-                      <p className="text-sm text-gray-600 subFont">
-                        Highest standards maintained globally
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Feature 3 */}
-                  <div className="flex items-start space-x-3 bg-gradient-to-br from-blue-100 to-white p-4 rounded-lg hover:scale-[1.02] transition-all duration-300">
-                    <Globe className="text-blue-500 mt-1" />
-                    <div className="text-left">
-                      <h4 className="font-semibold text-gray-800 headFont">
-                        International Partnerships
-                      </h4>
-                      <p className="text-sm text-gray-600 subFont">
-                        Building lasting global relationships
-                      </p>
-                    </div>
-                  </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="text-green-700 w-6 h-6 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-gray-800 headFont">
+                    Based in Kolkata
+                  </h4>
+                  <p className="text-sm text-gray-600 subFont">
+                    West Bengal, India – Strategic location for trade
+                  </p>
                 </div>
-
               </div>
             </Card>
-          </Col>
-        </Row>
+
+            <Card
+              className="flex-1 min-w-[230px] max-w-[300px] rounded-2xl border border-gray-100 bg-white/70 hover:shadow-lg transition duration-300"
+              bodyStyle={{ padding: "20px" }}
+            >
+              <div className="flex items-start space-x-3">
+                <PackageSearch className="text-blue-500 w-6 h-6 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-gray-800 headFont">
+                    Export Focus
+                  </h4>
+                  <p className="text-sm text-gray-600 subFont">
+                    Worldwide shipping and distribution network
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        {/* Right Side - Map */}
+        <Card className="rounded-xl shadow-md overflow-hidden bg-white border-0">
+          <MapContainer center={INDIA} zoom={4} style={{ height: "400px", width: "100%" }}>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            />
+            <Marker position={INDIA}>
+              <Popup>India</Popup>
+            </Marker>
+            {DESTINATIONS.map((dest, idx) => (
+              <React.Fragment key={idx}>
+                <Marker position={dest.coordinates}>
+                  <Popup>{dest.name}</Popup>
+                </Marker>
+                <Polyline
+                  positions={[INDIA, dest.coordinates]}
+                  pathOptions={{ color: "#4CAF50", dashArray: "4" }}
+                />
+              </React.Fragment>
+            ))}
+          </MapContainer>
+        </Card>
       </div>
     </div>
   );
 };
 
-export default GlobalExpansion;
+export default GlobalReachSection;

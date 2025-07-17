@@ -11,10 +11,10 @@ export const Certified = () => {
         <div className="px-4 py-10 max-w-6xl mx-auto">
             {/* Certifications Section */}
             <div className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center headFont">
                     We are certified under
                 </h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 ">
                     {[
                         { label: "APEDA", img: apeda },
                         { label: "FSSAI", img: fssai },
@@ -30,7 +30,7 @@ export const Certified = () => {
                                 alt={item.label}
                                 className="h-16 object-contain mb-3"
                             />
-                            <p className="text-sm font-medium text-gray-700 text-center">
+                            <p className="text-md !font-semibold text-gray-700 text-center subFont">
                                 {item.label}
                             </p>
                         </div>
@@ -48,7 +48,7 @@ export const Certified = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {[
                             { label: "Confederation of All India Traders", img: cait },
-                            { label: "IndiaMart", img: indiaMart },
+                            { label: "Indiamart", img: indiaMart },
                         ].map((item) => (
                             <div
                                 key={item.label}

@@ -43,17 +43,17 @@ export const Hero = () => {
                 <br />
                 {/* <span className="text-[#73BE73] block">Globally Sourced <br/>& Delivered</span> */}
               </h1>
-                <h1 className="text-3xl sm:text-4xl md:text-4xl font-extrabold leading-snug mb-4 md:mb-6 headFont">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl font-extrabold leading-snug mb-4 md:mb-6 headFont">
                 <span className="text-[#73BE73] block">Globally Sourced & Delivered</span>
               </h1>
-               <h2 className="text-base sm:text-md md:text-lg font-medium sm:font-semibold mb-4 text-white/90 subFont max-w-[600px]">
+              <h2 className="text-base sm:text-md md:text-lg font-medium sm:font-semibold mb-4 text-white/90 subFont max-w-[600px]">
                 Supplying bulk Ayurvedic herbs, oils, and natural ingredients to health brands, manufacturers, and wellness exporters worldwide.
               </h2>
-             
+
               <button className="mainbutton mt-2 md:mt-4 subFont">
                 Explore Our Products
               </button>
-              
+
             </div>
           </Col>
 
@@ -67,7 +67,7 @@ export const Hero = () => {
                   className="w-full h-[500px] hidden md:block sm:block object-contain transition-opacity duration-500 ease-in-out group-hover:opacity-0"
                 />
 
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 grid grid-cols-2 gap-10 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden sm:grid grid-cols-2 gap-10 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out">
                   {[hoverMain1, hoverMain2, hoverMain4, hoverMain3].map((img, index) => (
                     <div
                       key={index}
@@ -83,6 +83,7 @@ export const Hero = () => {
                     </div>
                   ))}
                 </div>
+
               </div>
             </div>
           </Col>

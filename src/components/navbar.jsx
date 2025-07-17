@@ -53,7 +53,7 @@ const Navbar = () => {
     <nav className={` text-white w-full shadow ${isHome ? "bg-transparent" : "bg-gradient-to-br from-emerald-700 to-emerald-700 !sticky"
       }`}>
       {/* Top Row: Logo + Social */}
-      <div className="flex justify-between items-center px-3 border-b border-white/20">
+      <div className="flex justify-between items-center px-3 border-b border-white/25">
         {/* Logo */}
         <div className="flex items-center ml-5">
           <img

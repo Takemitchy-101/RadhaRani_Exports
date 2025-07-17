@@ -7,7 +7,6 @@ import { FaGlobeAsia } from 'react-icons/fa';
 import { productData } from '../../components/dataModel';
 import { Row, Col, Tooltip } from 'antd';
 
-// Dummy category images — replace with your own images
 import catAyurvedic from '../../assets/ayurvedaIcon.png';
 import catWax from '../../assets/waxIcon.png';
 import catchemical from '../../assets/chemicalIcon.png';
@@ -60,30 +59,48 @@ const BestSelling = () => {
       </div>
 
       {/* Category Selector */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 px-4 max-w-[1280px] mx-auto">
-        {Object.entries(categoryImages).map(([category, image]) => (
-          <div
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`group cursor-pointer rounded-xl border-2 p-4 bg-[#c8f2c8] transition-all duration-300 ease-in-out flex flex-col items-center justify-center shadow-sm hover:shadow-xl hover:scale-[1.03]
-        ${selectedCategory === category
-                ? 'border-green-600 from-green-50 to-white'
-                : 'border-gray-200 from-white to-gray-50'
-              }`}
-          >
-            <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-md group-hover:shadow-lg transition duration-300">
-              <img
-                src={image}
-                alt={category}
-                className="w-17 h-17 object-contain transition-transform duration-300"
-              />
-            </div>
-            <span className="mt-3 text-sm sm:text-base font-semibold text-black transition-colors duration-300 text-center">
-              {category}
-            </span>
-          </div>
-        ))}
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 px-4 max-w-[1280px] mx-auto">
+  {Object.entries(categoryImages).map(([category, image]) => {
+    const isSelected = selectedCategory === category;
+    return (
+      <div
+        key={category}
+        onClick={() => setSelectedCategory(category)}
+        className={`
+          group cursor-pointer rounded-xl p-3 transition-all duration-300 ease-in-out 
+          flex flex-col items-center justify-center
+          ${
+            isSelected
+              ? 'bg-gradient-to-br from-green-100 via-white to-green-50 border-2 border-green-500 shadow-lg'
+              : 'bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-300 shadow-sm hover:shadow-md hover:border-green-400'
+          }
+        `}
+      >
+        <div
+          className={`w-16 h-16 rounded-full bg-white flex items-center justify-center 
+            shadow-md transition-transform duration-300 group-hover:scale-105
+            ${isSelected ? 'ring-2 ring-green-300' : 'group-hover:shadow-lg'}
+          `}
+        >
+          <img
+            src={image}
+            alt={category}
+            className="w-12 h-12 object-contain transition-transform duration-300"
+          />
+        </div>
+        <span
+          className={`mt-2 text-sm font-semibold text-center transition-colors duration-300 
+            ${isSelected ? 'text-green-700' : 'text-gray-700 group-hover:text-green-600'}
+          `}
+        >
+          {category}
+        </span>
       </div>
+    );
+  })}
+</div>
+
+
 
 
       {/* Product Cards */}

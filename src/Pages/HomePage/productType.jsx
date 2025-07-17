@@ -59,7 +59,7 @@ const ProductType = () => {
                         alt={item.label}
                         className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]"
                       />
-                      <span className="text-base sm:text-lg font-semibold underline headFont">
+                      <span className="sm:text-sm  md:text-lg font-semibold underline headFont">
                         {item.label}
                       </span>
                     </div>

@@ -33,11 +33,11 @@ export const Home = () => {
             <GlobalExpansion/>
             <KeyAdvantages />
             <Mission/>
+            <Specification />
             <Portfolio />
             {/* <Emailsub /> */}
             {/* <TeamDes/> */}
             {/* <LatestNews /> */}
-            <Specification />
             <Certified/>
             <SliderImage />
             {/* <BottomBar /> */}
