@@ -1,10 +1,29 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  Polyline,
+} from "react-leaflet";
 import { Card } from "antd";
 import { FaGlobeAsia, FaCheckCircle, FaHandshake } from "react-icons/fa";
 import commonIcon from "../../assets/commonIcon.png";
 import "leaflet/dist/leaflet.css";
 import { MapPin, PackageSearch } from "lucide-react";
+import L from "leaflet";
+import ReactDOMServer from "react-dom/server";
+
+// Create a custom marker icon using Lucide MapPin
+const createLucideIcon = (color = "#1D4ED8") =>
+  L.divIcon({
+    className: "",
+    html: ReactDOMServer.renderToString(
+      <MapPin color={color} size={24} strokeWidth={2.5} />
+    ),
+    iconSize: [24, 24],
+    iconAnchor: [12, 24],
+  });
 
 const INDIA = [22.5937, 78.9629];
 const DESTINATIONS = [
@@ -12,11 +31,8 @@ const DESTINATIONS = [
   { name: "Bhutan", coordinates: [27.5142, 90.4336] },
   { name: "Bangladesh", coordinates: [23.685, 90.3563] },
   { name: "Sri Lanka", coordinates: [7.8731, 80.7718] },
-  // { name: "USA", coordinates: [37.0902, -95.7129] },
-  // { name: "London", coordinates: [51.5074, -0.1278] },
-  // { name: "Melbourne", coordinates: [-37.8136, 144.9631] },
-  // { name: "Wellington", coordinates: [-41.2865, 174.7762] },
 ];
+
 const features = [
   {
     icon: <FaGlobeAsia className="text-orange-500 text-xl" />,
@@ -45,7 +61,11 @@ const GlobalReachSection = () => {
         <div className="flex items-center justify-center mb-4">
           <div className="custom-line" />
           <div className="h-16 w-16 mx-6 flex items-center justify-center">
-            <img src={commonIcon} alt="icon" className="h-12 w-12 object-contain" />
+            <img
+              src={commonIcon}
+              alt="icon"
+              className="h-12 w-12 object-contain"
+            />
           </div>
           <div className="custom-line" />
         </div>
@@ -53,7 +73,8 @@ const GlobalReachSection = () => {
           Rooted in India, Reaching the World
         </h2>
         <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto px-2">
-          Delivering India’s finest herbs and wellness essentials across borders with trust and tradition.
+          Delivering India’s finest herbs and wellness essentials across borders
+          with trust and tradition.
         </p>
       </div>
 
@@ -61,7 +82,10 @@ const GlobalReachSection = () => {
         {/* Left Side - Features + Cards */}
         <div className="space-y-6">
           {features.map((item, index) => (
-            <div key={index} className={`rounded-lg p-4 flex items-start gap-4 ${item.bg} shadow`}>
+            <div
+              key={index}
+              className={`rounded-lg p-4 flex items-start gap-4 ${item.bg} shadow`}
+            >
               <div>{item.icon}</div>
               <div>
                 <h4 className="font-semibold text-gray-800">{item.title}</h4>
@@ -110,17 +134,27 @@ const GlobalReachSection = () => {
 
         {/* Right Side - Map */}
         <Card className="rounded-xl shadow-md overflow-hidden bg-white border-0">
-          <MapContainer center={INDIA} zoom={4} style={{ height: "400px", width: "100%" }}>
+          <MapContainer
+            center={INDIA}
+            zoom={4}
+            style={{ height: "400px", width: "100%" }}
+          >
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             />
-            <Marker position={INDIA}>
-              <Popup>India</Popup>
+            {/* India Marker */}
+            <Marker position={INDIA} icon={createLucideIcon("#16a34a")}>
+              <Popup>India (Kolkata)</Popup>
             </Marker>
+
+            {/* Destination Markers */}
             {DESTINATIONS.map((dest, idx) => (
               <React.Fragment key={idx}>
-                <Marker position={dest.coordinates}>
+                <Marker
+                  position={dest.coordinates}
+                  icon={createLucideIcon("#0ea5e9")}
+                >
                   <Popup>{dest.name}</Popup>
                 </Marker>
                 <Polyline
@@ -135,6 +169,5 @@ const GlobalReachSection = () => {
     </div>
   );
 };
-
 
 export default GlobalReachSection;
