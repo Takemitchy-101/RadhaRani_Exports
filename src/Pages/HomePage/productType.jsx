@@ -9,10 +9,10 @@ import newRangeBG2 from '../../assets/newRangeBG2.png';
 import newRangeMain from '../../assets/newRangeMain.png';
 
 const categories = [
-  { id: 1, icon: type1, label: 'Ayurvedic' },
-  { id: 2, icon: type3, label: 'Chemical' },
-  { id: 3, icon: type2, label: 'Wax Items' },
-  { id: 4, icon: type4, label: 'Oil & Metals' },
+  { id: "Ayurvedic", icon: type1, label: 'Ayurvedic' },
+  { id: "Natural Chemcials", icon: type3, label: 'Chemical' },
+  { id: "Wax", icon: type2, label: 'Wax Items' },
+  { id: "Metals And Oils", icon: type4, label: 'Oil & Metals' },
 ];
 
 const ProductType = () => {
@@ -43,7 +43,7 @@ const ProductType = () => {
                   Uncover Global Offerings
                 </h1>
                 <p className="text-base sm:text-lg text-gray-700 font-[Karla,sans-serif]">
-                 Experience Premium Quality Worldwide. Our natural and 
+                  Experience Premium Quality Worldwide. Our natural and
                   <br className="hidden sm:block" />
                   industrial products deliver excellence every time
                 </p>
@@ -52,16 +52,34 @@ const ProductType = () => {
               <Row gutter={[16, 16]} className="mt-6 sm:mt-10">
                 {categories.map((item) => (
                   <Col
-                    key={item.id} xs={12} sm={12} md={12} lg={12} xl={12} className="flex items-center">
-                    <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer w-full">
+                    key={item.id}
+                    xs={12}
+                    sm={12}
+                    md={12}
+                    lg={12}
+                    xl={12}
+                    className="flex items-center"
+                  >
+                    <div
+                      onClick={() => {
+                        const id = `category-${item.id.replace(/\s+/g, '-').toLowerCase()}`;
+                        window.location.hash = id; // sets the URL hash
+                        const el = document.getElementById(id);
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer w-full"
+                    >
                       <img
                         src={item.icon}
                         alt={item.label}
                         className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]"
                       />
-                      <span className="sm:text-sm  md:text-lg font-semibold underline headFont">
+                      <span className="text-[15px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-semibold underline headFont">
                         {item.label}
                       </span>
+
                     </div>
                   </Col>
                 ))}

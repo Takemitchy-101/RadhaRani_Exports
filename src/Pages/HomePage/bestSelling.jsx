@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import commonIcon from '../../assets/commonIcon.png';
 import bg1 from '../../assets/bestSellBG1.png';
 import bg2 from '../../assets/bestSellBG2.png';
@@ -12,12 +12,22 @@ import catWax from '../../assets/waxIcon.png';
 import catchemical from '../../assets/chemicalIcon.png';
 import catMandO from '../../assets/oandmIcon.png';
 
+import waxPdf from '../../assets/pdf/WaxProduct.pdf';
+import chemicalPdf from '../../assets/pdf/ChemicalProduct.pdf';
+import metalandoilPdf from '../../assets/pdf/MetalOilProduct.pdf';
+
 const countryCodeMap = {
   IN: 'India',
   NP: 'Nepal',
   BD: 'Bangladesh',
   LK: 'Sri Lanka',
   BT: 'Bhutan',
+};
+
+const categoryPDFs = {
+  Wax: waxPdf,
+  'Natural Chemcials': chemicalPdf,
+  'Metals And Oils': metalandoilPdf,
 };
 
 const BestSelling = () => {
@@ -29,6 +39,29 @@ const BestSelling = () => {
     'Natural Chemcials': catchemical,
     'Metals And Oils': catMandO,
   };
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#category-', '').replace(/-/g, ' ');
+      const formatted = hash
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
+      if (formatted && Object.keys(categoryImages).includes(formatted)) {
+        setSelectedCategory(formatted);
+      }
+    };
+
+    handleHashChange(); // run on initial load
+
+    window.addEventListener('hashchange', handleHashChange); // run on every hash change
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
 
 
   const filteredProducts = productData.filter(
@@ -59,48 +92,46 @@ const BestSelling = () => {
       </div>
 
       {/* Category Selector */}
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 px-4 max-w-[1280px] mx-auto">
-  {Object.entries(categoryImages).map(([category, image]) => {
-    const isSelected = selectedCategory === category;
-    return (
-      <div
-        key={category}
-        onClick={() => setSelectedCategory(category)}
-        className={`
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 px-4 max-w-[1280px] mx-auto">
+        {Object.entries(categoryImages).map(([category, image]) => {
+          const isSelected = selectedCategory === category;
+          return (
+            <div
+              key={category}
+              id={`category-${category.replace(/\s+/g, '-').toLowerCase()}`}
+              onClick={() => setSelectedCategory(category)}
+              className={`
           group cursor-pointer rounded-xl p-3 transition-all duration-300 ease-in-out 
           flex flex-col items-center justify-center
-          ${
-            isSelected
-              ? 'bg-gradient-to-br from-green-100 via-white to-green-50 border-2 border-green-500 shadow-lg'
-              : 'bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-300 shadow-sm hover:shadow-md hover:border-green-400'
-          }
+          ${isSelected
+                  ? 'bg-gradient-to-br from-green-100 via-white to-green-50 border-2 border-green-500 shadow-lg'
+                  : 'bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-300 shadow-sm hover:shadow-md hover:border-green-400'
+                }
         `}
-      >
-        <div
-          className={`w-16 h-16 rounded-full bg-white flex items-center justify-center 
+            >
+              <div
+                className={`w-16 h-16 rounded-full bg-white flex items-center justify-center 
             shadow-md transition-transform duration-300 group-hover:scale-105
             ${isSelected ? 'ring-2 ring-green-300' : 'group-hover:shadow-lg'}
           `}
-        >
-          <img
-            src={image}
-            alt={category}
-            className="w-12 h-12 object-contain transition-transform duration-300"
-          />
-        </div>
-        <span
-          className={`mt-2 text-sm font-semibold text-center transition-colors duration-300 
+              >
+                <img
+                  src={image}
+                  alt={category}
+                  className="w-12 h-12 object-contain transition-transform duration-300"
+                />
+              </div>
+              <span
+                className={`mt-2 text-sm font-semibold text-center transition-colors duration-300 
             ${isSelected ? 'text-green-700' : 'text-gray-700 group-hover:text-green-600'}
           `}
-        >
-          {category}
-        </span>
+              >
+                {category}
+              </span>
+            </div>
+          );
+        })}
       </div>
-    );
-  })}
-</div>
-
-
 
 
       {/* Product Cards */}
@@ -122,15 +153,28 @@ const BestSelling = () => {
                     alt={item.pdname}
                     className="w-full h-48 object-cover rounded-xl"
                   />
-                  <h3 className="mt-4 text-lg font-semibold text-gray-800 headFont">
-                    {item.pdname}
-                  </h3>
+                  <Tooltip title={item.pdname} placement="top">
+                    <h3 className="mt-4 text-lg font-semibold text-gray-800 headFont w-full truncate">
+                      {item.pdname}
+                    </h3>
+                  </Tooltip>
                 </div>
               </Col>
             ))}
           </Row>
+          
+          <div className="text-center mt-6">
+            <a
+              href={categoryPDFs[selectedCategory]}
+              download
+              className="inline-block bg-green-600 text-white px-5 py-2 rounded-lg shadow hover:bg-green-700 transition-all duration-300"
+            >
+              Download Full Product List (PDF)
+            </a>
+          </div>
         </div>
       </div>
+
 
       {/* Export Section */}
       <div className="px-4 py-10">
