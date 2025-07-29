@@ -23,7 +23,15 @@ export const KeyAdvantages = () => {
       image: logo1,
       heading: 'Trusted Ayurvedic Sourcing Partner',
       des: 'With years of experience in sourcing premium-grade Ayurvedic herbs, we ensure reliable, ethical, and farm-direct supply to global clients.',
-      fullDetails: `We connect directly with farmers and ensure transparency in sourcing. Quality and trust are our pillars.`,
+      fullDetails: `Welcome to Radha Rani Exports, a trusted name in wholesale and retail trade, proudly based in Kolkata, West Bengal, India.
+
+      SEstablished in May 2012, we specialize in:
+      - Import and export of Ayurvedic herbs and spices
+      - Supply of chemicals and petroleum by-products including paraffin wax, paraffin oil, and petroleum jelly
+
+    We connect directly with farmers to ensure ethical sourcing, transparent supply chains, and uncompromised quality.
+
+    Our foundation is built on trust, transparency, and tradition.`,
     },
     {
       id: 2,
@@ -39,9 +47,16 @@ We provide lab reports and certifications to ensure you get what you expect—ev
       image: logo3,
       heading: 'Export-Ready Logistics',
       des: 'From documentation to packaging, we handle all compliance requirements to ensure a smooth export experience for bulk Ayurvedic buyers worldwide.',
-      fullDetails: `We handle documentation, packaging, labeling, and export compliance so you don't have to.`,
+      fullDetails: `We handle complete export documentation, packaging, labeling, and customs compliance.
+
+We are proud to be an authorized distributor of Indian Oil Corporation for wax and oil products.
+
+We cater to both B2B and B2C clients, including Ayurvedic medicine manufacturers, wholesalers, retailers, and international buyers.
+
+Our logistics ensure on-time delivery, safe transit, and legal compliance across global markets.`,
     },
   ];
+
 
   const logoMap = {
     APEDA: apeda,
@@ -128,7 +143,7 @@ We provide lab reports and certifications to ensure you get what you expect—ev
                           </div>
                         </>
                       ) : (
-                        <p>{expandedCard.fullDetails}</p>
+                        <p className='font-semibold subFont'>{expandedCard.fullDetails}</p>
                       )}
                     </div>
 
