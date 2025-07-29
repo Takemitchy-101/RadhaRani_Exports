@@ -62,7 +62,7 @@ import oil6 from '../assets/castorOil.png';
     { id: 9, Image: pd9, pdname: 'Flax Seeds', category: 'Ayurvedic' },
     { id: 10, Image: pd10, pdname: 'Guggal', category: 'Ayurvedic' },
     { id: 11, Image: pd11, pdname: 'Amla Dry', category: 'Ayurvedic' },
-    { id: 12, Image: pd4, pdname: 'Ashwagandha', category: 'Ayurvedic' },
+    // { id: 12, Image: pd4, pdname: 'Ashwagandha', category: 'Ayurvedic' },
 
 
     { id: 111, Image: wax1, pdname: ' Fully Refined Paraffin wax', category: 'Wax' },

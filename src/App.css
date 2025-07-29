@@ -62,11 +62,15 @@ html {
   height: 100%;
   object-fit: cover;
   border-radius: 0.75rem;
-  /* rounded-xl = 12px */
   transition: transform 0.3s ease;
-  /* smooth transition on transform */
   transform: translateZ(0);
-  /* enable GPU acceleration for smoother transform */
+}
+
+/* On small screens: set height to auto */
+@media (max-width: 639px) {
+  .portfolio-image {
+    height: auto;
+  }
 }
 
 .portfolio-image:hover {

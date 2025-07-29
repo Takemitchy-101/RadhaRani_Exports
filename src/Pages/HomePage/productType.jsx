@@ -63,24 +63,24 @@ const ProductType = () => {
                     <div
                       onClick={() => {
                         const id = `category-${item.id.replace(/\s+/g, '-').toLowerCase()}`;
-                        window.location.hash = id; // sets the URL hash
+                        window.location.hash = id;
                         const el = document.getElementById(id);
                         if (el) {
                           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                       }}
-                      className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer w-full"
+                      className="flex flex-col min-[400px]:flex-row items-center gap-3 bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 cursor-pointer w-full"
                     >
                       <img
                         src={item.icon}
                         alt={item.label}
                         className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]"
                       />
-                      <span className="text-[15px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-semibold underline headFont">
+                      <span className="text-[15px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-semibold underline headFont text-center min-[400px]:text-left">
                         {item.label}
                       </span>
-
                     </div>
+
                   </Col>
                 ))}
               </Row>
