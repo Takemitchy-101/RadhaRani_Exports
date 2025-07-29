@@ -80,10 +80,10 @@ export const SliderImage = () => {
         {/* Slider */}
         <Slider ref={sliderRef} {...settings}>
           {SliderData.map((item, index) => (
-            <div key={item.id} className='px-2 sm:px-4 cursor-pointer' onClick={() => handleSlideClick(index)}>
+            <div key={item.id} className='px-2 py-5 sm:px-4 cursor-pointer' onClick={() => handleSlideClick(index)}>
               <div
                 className={`rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 ${index === activeSlide
-                  ? 'scale-100 shadow-[#eeffee]' : 'scale-95 opacity-65'}`}
+                  ? 'scale-110 shadow-[#eeffee]' : 'scale-95 opacity-65'}`}
               >
                 <img
                   src={item.image}
@@ -99,7 +99,7 @@ export const SliderImage = () => {
 
       <div className="px-4 mt-30 flex justify-center flex-col items-center">
         
-        <h2 className="flex flex-col sm:flex-row items-center justify-center gap-2 text-center mb-4 border-1 border-gray-300 px-2 py-2 ">
+        <h2 className="flex flex-col sm:flex-row items-center justify-center gap-2 text-center mb-4 px-2 py-2 ">
             {/* <div className="custom-line !w-[200px]" /> */}
           <SiGooglemaps className="text-2xl sm:text-4xl md:text-5xl text-red-500" />
           <span className="text-xl sm:text-2xl md:text-2xl font-semibold text-gray-800 headFont">
