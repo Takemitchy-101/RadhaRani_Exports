@@ -38,7 +38,7 @@ export const BottomBar = () => {
           <SiGooglemaps className="text-xl text-white" /> Address
         </span>
       ),
-      content: `Radha Rani Exports,\nD-1 Strand Bank Road,\nJagannath Ghat Cross Road,\nNaffis Patti (Hari Ram Market),\nPin 700007`,
+      content: `Radha Rani Exports,\nD-1 Strand Bank Road Posta,\nJagannath Ghat Cross Road,\nNaffis Patti (Hari Ram Market),\nPin 700007`,
     },
     {
       title: 'Contact Us',

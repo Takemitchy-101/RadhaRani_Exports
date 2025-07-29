@@ -83,12 +83,12 @@ export const SliderImage = () => {
             <div key={item.id} className='px-2 sm:px-4 cursor-pointer' onClick={() => handleSlideClick(index)}>
               <div
                 className={`rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 ${index === activeSlide
-                  ? 'scale-105 shadow-[#eeffee]' : 'scale-95 opacity-70'}`}
+                  ? 'scale-100 shadow-[#eeffee]' : 'scale-95 opacity-65'}`}
               >
                 <img
                   src={item.image}
                   alt={`Slide ${index}`}
-                  className='w-full h-60 object-cover'
+                  className='w-full lg:h-60 object-cover'
                 />
               </div>
             </div>
