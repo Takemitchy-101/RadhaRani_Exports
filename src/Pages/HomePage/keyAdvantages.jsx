@@ -61,11 +61,11 @@ We provide lab reports and certifications to ensure you get what you expect—ev
       {/* Header */}
       <div className="text-center z-10 relative mb-10">
         <div className="flex items-center justify-center mb-4">
-          <div className="custom-line hidden sm:block" />
+          <div className="custom-line" />
           <div className="h-16 w-16 mx-4 flex items-center justify-center">
             <img src={commonIcon} alt="icon" className="h-12 w-12 object-contain" />
           </div>
-          <div className="custom-line hidden sm:block" />
+          <div className="custom-line" />
         </div>
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
           Why Choose Us
