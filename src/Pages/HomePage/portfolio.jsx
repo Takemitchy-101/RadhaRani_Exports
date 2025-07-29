@@ -52,12 +52,12 @@ const Portfolio = () => {
       <img
         src={pf41}
         alt="Portfolio 4"
-        className="portfolio-image"
+        className="portfolio-image hidden sm:block"
       />
       <img
         src={pf5}
         alt="Portfolio 5"
-        className="portfolio-image"
+        className="portfolio-image hidden sm:block"
       />
     </div>
   </div>

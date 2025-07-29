@@ -97,15 +97,13 @@ const GlobalReachSection = () => {
           {/* Additional Cards */}
           <div className="flex flex-wrap gap-4 pt-4">
             <Card
-              className="flex-1 min-w-[230px] max-w-[300px] rounded-2xl border border-gray-100 bg-white/70 hover:shadow-lg transition duration-300"
+              className="w-full sm:flex-1 sm:min-w-[230px] sm:max-w-[300px] rounded-2xl border border-gray-100 bg-white/70 hover:shadow-lg transition duration-300"
               bodyStyle={{ padding: "20px" }}
             >
               <div className="flex items-start space-x-3">
                 <MapPin className="text-green-700 w-6 h-6 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-gray-800 headFont">
-                    Based in Kolkata
-                  </h4>
+                  <h4 className="font-semibold text-gray-800 headFont">Based in Kolkata</h4>
                   <p className="text-sm text-gray-600 subFont">
                     West Bengal, India – Strategic location for trade
                   </p>
@@ -114,15 +112,13 @@ const GlobalReachSection = () => {
             </Card>
 
             <Card
-              className="flex-1 min-w-[230px] max-w-[300px] rounded-2xl border border-gray-100 bg-white/70 hover:shadow-lg transition duration-300"
+              className="w-full sm:flex-1 sm:min-w-[230px] sm:max-w-[300px] rounded-2xl border border-gray-100 bg-white/70 hover:shadow-lg transition duration-300"
               bodyStyle={{ padding: "20px" }}
             >
               <div className="flex items-start space-x-3">
                 <PackageSearch className="text-blue-500 w-6 h-6 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-gray-800 headFont">
-                    Export Focus
-                  </h4>
+                  <h4 className="font-semibold text-gray-800 headFont">Export Focus</h4>
                   <p className="text-sm text-gray-600 subFont">
                     Worldwide shipping and distribution network
                   </p>
