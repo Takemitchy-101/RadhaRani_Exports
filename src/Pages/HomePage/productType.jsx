@@ -31,7 +31,7 @@ const ProductType = () => {
       />
 
       <div className='relative -top-5 sm:-top-5 lg:-top-15  z-10'>
-        <div className="flex justify-center items-center bg-[#ffffff] lg:py-10  px-4 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
+        <div className="flex justify-center items-center bg-[#ffffff] lg:py-10  py-6 px-5 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
           <Row
             className="w-full"
             gutter={[24, 24]}
