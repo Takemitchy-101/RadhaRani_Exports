@@ -87,7 +87,7 @@ const AnimatedPolyline = ({ positions }) => {
 const GlobalReachSection = () => {
   return (
     <div className="bg-[#eeffee]">
-    <div className=" py-16 px-4 max-w-[1280px] mx-auto mb-20">
+    <div className=" py-16 px-4 max-w-[1280px] mx-auto mb-10">
       <div className="text-center z-10 relative mb-12">
         <div className="flex items-center justify-center mb-4">
           <div className="custom-line" />
