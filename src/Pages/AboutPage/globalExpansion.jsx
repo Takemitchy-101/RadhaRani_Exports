@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   MapContainer,
   TileLayer,
   Marker,
   Popup,
   Polyline,
+  useMap,
 } from "react-leaflet";
 import { Card } from "antd";
 import { FaGlobeAsia, FaCheckCircle, FaHandshake } from "react-icons/fa";
@@ -13,8 +14,8 @@ import "leaflet/dist/leaflet.css";
 import { MapPin, PackageSearch } from "lucide-react";
 import L from "leaflet";
 import ReactDOMServer from "react-dom/server";
+import gsap from "gsap";
 
-// Create a custom marker icon using Lucide MapPin
 const createLucideIcon = (color = "#1D4ED8") =>
   L.divIcon({
     className: "",
@@ -38,25 +39,55 @@ const features = [
     icon: <FaGlobeAsia className="text-orange-500 text-xl" />,
     title: "100% Natural Exports",
     desc: "Every product meets international quality and certification standards",
-    bg: "bg-orange-50",
+    bg: "bg-orange-100",
   },
   {
     icon: <FaCheckCircle className="text-green-500 text-xl" />,
     title: "FSSAI & GMP Certified",
     desc: "Assuring safety, consistency, and quality in all global batches",
-    bg: "bg-green-50",
+    bg: "bg-green-100",
   },
   {
     icon: <FaHandshake className="text-blue-500 text-xl" />,
     title: "Growing Global Demand",
     desc: "Increased interest in Ayurveda across South Asian nations",
-    bg: "bg-blue-50",
+    bg: "bg-blue-100",
   },
 ];
 
+const AnimatedPolyline = ({ positions }) => {
+  const polylineRef = useRef();
+
+  useEffect(() => {
+    if (polylineRef.current) {
+      const path = polylineRef.current._path;
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = length;
+
+      gsap.to(path, {
+        strokeDashoffset: 0,
+        duration: 2,
+        ease: "power2.inOut",
+        repeat: -1,
+        repeatDelay: 1,
+      });
+    }
+  }, []);
+
+  return (
+    <Polyline
+      ref={polylineRef}
+      positions={positions}
+      pathOptions={{ color: "#4CAF50", weight: 3 }}
+    />
+  );
+};
+
 const GlobalReachSection = () => {
   return (
-    <div className="bg-[#f5fdf6] py-16 px-4 rounded-xl shadow-md max-w-[1280px] mx-auto mb-20">
+    <div className="bg-[#eeffee]">
+    <div className=" py-16 px-4 max-w-[1280px] mx-auto mb-20">
       <div className="text-center z-10 relative mb-12">
         <div className="flex items-center justify-center mb-4">
           <div className="custom-line" />
@@ -88,8 +119,8 @@ const GlobalReachSection = () => {
             >
               <div>{item.icon}</div>
               <div>
-                <h4 className="font-semibold text-gray-800 headFont">{item.title}</h4>
-                <p className="text-gray-600 text-sm subFont">{item.desc}</p>
+                <h4 className="font-bold text-gray-800 headFont">{item.title}</h4>
+                <p className="text-gray-600 text-md subFont font-medium">{item.desc}</p>
               </div>
             </div>
           ))}
@@ -103,8 +134,8 @@ const GlobalReachSection = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="text-green-700 w-6 h-6 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-gray-800 headFont">Based in Kolkata</h4>
-                  <p className="text-sm text-gray-600 subFont">
+                  <h4 className="font-bold text-gray-800 headFont">Based in Kolkata</h4>
+                  <p className="text-sm text-gray-800 subFont font-medium">
                     West Bengal, India – Strategic location for trade
                   </p>
                 </div>
@@ -118,9 +149,9 @@ const GlobalReachSection = () => {
               <div className="flex items-start space-x-3">
                 <PackageSearch className="text-blue-500 w-6 h-6 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-gray-800 headFont">Export Focus</h4>
-                  <p className="text-sm text-gray-600 subFont">
-                    Worldwide shipping and distribution network
+                  <h4 className="font-bold text-gray-800 headFont">Export Focus</h4>
+                  <p className="text-md text-gray-800 subFont font-medium">
+                    Worldwide shipping and distri-bution network
                   </p>
                 </div>
               </div>
@@ -139,12 +170,10 @@ const GlobalReachSection = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             />
-            {/* India Marker */}
             <Marker position={INDIA} icon={createLucideIcon("#16a34a")}>
               <Popup>India (Kolkata)</Popup>
             </Marker>
 
-            {/* Destination Markers */}
             {DESTINATIONS.map((dest, idx) => (
               <React.Fragment key={idx}>
                 <Marker
@@ -153,15 +182,13 @@ const GlobalReachSection = () => {
                 >
                   <Popup>{dest.name}</Popup>
                 </Marker>
-                <Polyline
-                  positions={[INDIA, dest.coordinates]}
-                  pathOptions={{ color: "#4CAF50", dashArray: "4" }}
-                />
+                <AnimatedPolyline positions={[INDIA, dest.coordinates]} />
               </React.Fragment>
             ))}
           </MapContainer>
         </Card>
       </div>
+    </div>
     </div>
   );
 };

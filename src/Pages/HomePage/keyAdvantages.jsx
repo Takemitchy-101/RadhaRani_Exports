@@ -25,7 +25,7 @@ export const KeyAdvantages = () => {
       des: 'With years of experience in sourcing premium-grade Ayurvedic herbs, we ensure reliable, ethical, and farm-direct supply to global clients.',
       fullDetails: `Welcome to Radha Rani Exports, a trusted name in wholesale and retail trade, proudly based in Kolkata, West Bengal, India.
 
-      SEstablished in May 2012, we specialize in:
+      Established in May 2012, we specialize in:
       - Import and export of Ayurvedic herbs and spices
       - Supply of chemicals and petroleum by-products including paraffin wax, paraffin oil, and petroleum jelly
 

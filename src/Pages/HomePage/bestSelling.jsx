@@ -6,6 +6,7 @@ import Flag from 'react-world-flags';
 import { FaGlobeAsia } from 'react-icons/fa';
 import { productData } from '../../components/dataModel';
 import { Row, Col, Tooltip } from 'antd';
+import { FiDownload } from 'react-icons/fi';
 
 import catAyurvedic from '../../assets/ayurvedaIcon.png';
 import catWax from '../../assets/waxIcon.png';
@@ -53,16 +54,13 @@ const BestSelling = () => {
       }
     };
 
-    handleHashChange(); // run on initial load
-
-    window.addEventListener('hashchange', handleHashChange); // run on every hash change
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
-
-
 
   const filteredProducts = productData.filter(
     (item) => item.category === selectedCategory
@@ -101,19 +99,19 @@ const BestSelling = () => {
               id={`category-${category.replace(/\s+/g, '-').toLowerCase()}`}
               onClick={() => setSelectedCategory(category)}
               className={`
-          group cursor-pointer rounded-xl p-3 transition-all duration-300 ease-in-out 
-          flex flex-col items-center justify-center
-          ${isSelected
+                group cursor-pointer rounded-xl p-3 transition-all duration-300 ease-in-out 
+                flex flex-col items-center justify-center
+                ${isSelected
                   ? 'bg-gradient-to-br from-green-100 via-white to-green-50 border-2 border-green-500 shadow-lg'
                   : 'bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-300 shadow-sm hover:shadow-md hover:border-green-400'
                 }
-        `}
+              `}
             >
               <div
                 className={`w-16 h-16 rounded-full bg-white flex items-center justify-center 
-            shadow-md transition-transform duration-300 group-hover:scale-105
-            ${isSelected ? 'ring-2 ring-green-300' : 'group-hover:shadow-lg'}
-          `}
+                  shadow-md transition-transform duration-300 group-hover:scale-105
+                  ${isSelected ? 'ring-2 ring-green-300' : 'group-hover:shadow-lg'}
+                `}
               >
                 <img
                   src={image}
@@ -123,8 +121,8 @@ const BestSelling = () => {
               </div>
               <span
                 className={`mt-2 text-sm font-semibold text-center transition-colors duration-300 
-            ${isSelected ? 'text-green-700' : 'text-gray-700 group-hover:text-green-600'}
-          `}
+                  ${isSelected ? 'text-green-700' : 'text-gray-700 group-hover:text-green-600'}
+                `}
               >
                 {category}
               </span>
@@ -133,10 +131,9 @@ const BestSelling = () => {
         })}
       </div>
 
-
       {/* Product Cards */}
       <div className="px-4 max-w-[1280px] mx-auto z-10 relative">
-        <div className="max-h-[600px] overflow-y-auto custom-scrollbar p-5">
+        <div className="max-h-[600px] overflow-y-auto custom-scrollbar p-5 bg-white rounded-lg shadow-md">
           <Row gutter={[24, 24]}>
             {filteredProducts.map((item) => (
               <Col
@@ -162,19 +159,25 @@ const BestSelling = () => {
               </Col>
             ))}
           </Row>
-          
-          <div className="text-center mt-6">
-            <a
-              href={categoryPDFs[selectedCategory]}
-              download
-              className="inline-block bg-green-600 text-white px-5 py-2 rounded-lg shadow hover:bg-green-700 transition-all duration-300"
-            >
-              Download Full Product List (PDF)
-            </a>
-          </div>
+        </div>
+
+        {/* Button always visible */}
+        <div className="text-center mt-6">
+          <a
+            href={categoryPDFs[selectedCategory]}
+            download
+            className="
+                inline-flex items-center gap-2
+                bg-green-600 text-white font-medium
+                px-6 py-1 rounded-xl shadow-md
+                hover:bg-green-700 transition-all duration-300
+              "
+          >
+            <FiDownload className="w-5 h-5" />
+            Download Product List
+          </a>
         </div>
       </div>
-
 
       {/* Export Section */}
       <div className="px-4 py-10">
