@@ -7,6 +7,7 @@ import type4 from '../../assets/oandmIcon.png';
 import newRangeBG1 from '../../assets/newRangeBG1.png';
 import newRangeBG2 from '../../assets/newRangeBG2.png';
 import newRangeMain from '../../assets/newRangeMain.png';
+import iol from '../../assets/indianOilLogo.png';
 
 const categories = [
   { id: "Ayurvedic", icon: type1, label: 'Ayurvedic' },
@@ -30,7 +31,7 @@ const ProductType = () => {
       />
 
       <div className='relative -top-5 sm:-top-5 lg:-top-15  z-10'>
-        <div className="flex justify-center items-center bg-[#ffffff] py-10 px-4 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
+        <div className="flex justify-center items-center bg-[#ffffff] lg:py-10  px-4 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
           <Row
             className="w-full"
             gutter={[24, 24]}
@@ -80,11 +81,9 @@ const ProductType = () => {
                         {item.label}
                       </span>
                     </div>
-
                   </Col>
                 ))}
               </Row>
-
             </Col>
 
             {/* Image */}
@@ -97,6 +96,22 @@ const ProductType = () => {
             </Col>
           </Row>
         </div>
+
+        <div className="block md:hidden my-3 flex items-center justify-center space-x-3">
+          <div className="p-1 border border-gray-300 rounded-md hover:shadow-sm transition-shadow duration-300">
+            <img
+              src={iol}
+              alt="Indian Oil Logo"
+              className="h-[45px] w-[45px] object-contain transform hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <p className="text-[17px] font-medium text-gray-700 leading-tight">
+            Leading Distributor <br />
+            of Wax & Oil Solutions
+          </p>
+        </div>
+
+
       </div>
     </div>
   );
