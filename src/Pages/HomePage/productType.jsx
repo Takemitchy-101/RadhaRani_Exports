@@ -94,19 +94,22 @@ const ProductType = () => {
           {/* Distributor Row BELOW the above content */}
           <Row gutter={[24, 24]} className="w-full pb-5">
             <Col span={24}>
-              <div className="md:hidden  flex items-center justify-center space-x-3">
-                <div className="p-1 border border-gray-300 rounded-md hover:shadow-sm transition-shadow duration-300">
-                  <img
-                    src={iol}
-                    alt="Indian Oil Logo"
-                    className="h-[45px] w-[45px] object-contain transform hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <p className="text-[17px] font-medium text-gray-700 leading-tight">
-                  Leading Distributor <br />
-                  of Wax & Oil Solutions
-                </p>
-              </div>
+              <div className="md:hidden w-full max-w-sm mx-auto bg-white rounded-xl shadow-md p-4 flex items-center gap-4 transition-transform hover:scale-[1.02] duration-300">
+  <div className="p-2 border border-gray-200 rounded-lg shadow-sm flex-shrink-0">
+    <img
+      src={iol}
+      alt="Indian Oil Logo"
+      className="h-[50px] w-[50px] object-contain transition-transform duration-300 hover:scale-110"
+    />
+  </div>
+  <div className="flex flex-col">
+    <h3 className="text-base font-semibold text-gray-800 leading-tight">
+      Leading Distributor
+    </h3>
+    <p className="text-sm text-gray-600">of Wax & Oil Solutions</p>
+  </div>
+</div>
+
             </Col>
           </Row>
         </div>
