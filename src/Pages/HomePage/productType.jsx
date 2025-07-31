@@ -31,18 +31,13 @@ const ProductType = () => {
       />
 
       <div className='relative -top-5 sm:-top-5 lg:-top-15  z-10'>
-        <div className="flex justify-center items-center bg-[#ffffff] lg:py-10  py-6 px-5 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
-          <Row
-            className="w-full"
-            gutter={[24, 24]}
-            align="middle"
-          >
+        <div className="flex flex-col justify-center items-center bg-[#ffffff] lg:py-10 py-6 px-5 sm:px-6 lg:px-8 rounded-3xl max-w-[1100px] mx-auto">
+          {/* Main Row */}
+          <Row className="w-full" gutter={[24, 24]} align="middle">
             {/* Text + Categories */}
             <Col xs={24} md={12} className="flex flex-col justify-between">
               <div className="text-left mb-6">
-                <h1 className="allheading">
-                  Uncover Global Offerings
-                </h1>
+                <h1 className="allheading">Uncover Global Offerings</h1>
                 <p className="text-base sm:text-lg text-gray-700 font-[Karla,sans-serif]">
                   Experience Premium Quality Worldwide. Our natural and
                   <br className="hidden sm:block" />
@@ -95,23 +90,26 @@ const ProductType = () => {
               />
             </Col>
           </Row>
+
+          {/* Distributor Row BELOW the above content */}
+          <Row gutter={[24, 24]} className="w-full pb-5">
+            <Col span={24}>
+              <div className="md:hidden  flex items-center justify-center space-x-3">
+                <div className="p-1 border border-gray-300 rounded-md hover:shadow-sm transition-shadow duration-300">
+                  <img
+                    src={iol}
+                    alt="Indian Oil Logo"
+                    className="h-[45px] w-[45px] object-contain transform hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <p className="text-[17px] font-medium text-gray-700 leading-tight">
+                  Leading Distributor <br />
+                  of Wax & Oil Solutions
+                </p>
+              </div>
+            </Col>
+          </Row>
         </div>
-
-        <div className="block md:hidden my-3 flex items-center justify-center space-x-3">
-          <div className="p-1 border border-gray-300 rounded-md hover:shadow-sm transition-shadow duration-300">
-            <img
-              src={iol}
-              alt="Indian Oil Logo"
-              className="h-[45px] w-[45px] object-contain transform hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-          <p className="text-[17px] font-medium text-gray-700 leading-tight">
-            Leading Distributor <br />
-            of Wax & Oil Solutions
-          </p>
-        </div>
-
-
       </div>
     </div>
   );

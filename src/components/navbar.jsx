@@ -111,7 +111,7 @@ const Navbar = () => {
         closeIcon={<CloseOutlined />}
       >
         <div className="flex flex-col space-y-4 subFont text-black text-lg">
-          <Link to="/" onClick={closeDrawer}>
+          <Link to="/" onClick={closeDrawer} className='subFont !text-black'>
             Home
           </Link>
           <a href="#categories"  className='subFont !text-black' onClick={closeDrawer}>
