@@ -33,7 +33,7 @@ const Portfolio = () => {
           <img
             src={pf31}
             alt="Portfolio 1"
-            className="w-full h-auto object-cover rounded-xl"
+            className="w-full h-auto object-cover rounded-xl portfolio-image"
           />
         </div>
 
@@ -52,12 +52,12 @@ const Portfolio = () => {
           <img
             src={pf41}
             alt="Portfolio 4"
-            className="block max-sm:hidden"
+            className="block portfolio-image max-sm:hidden"
           />
           <img
             src={pf5}
             alt="Portfolio 5"
-            className="block max-sm:hidden"
+            className="block portfolio-image max-sm:hidden"
           />
         </div>
       </div>
