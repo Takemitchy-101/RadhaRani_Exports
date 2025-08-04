@@ -66,15 +66,20 @@ html {
   transform: translateZ(0);
 }
 
-/* On small screens: set height to auto */
+.portfolio-image:hover {
+  transform: scale(1.05);
+}
+
+/* Ensure the parent container has a defined aspect ratio */
+.aspect-w-1 {
+  aspect-ratio: 1 / 1; /* Square aspect ratio; adjust as needed (e.g., 4/3, 16/9) */
+}
+
+/* On small screens: maintain aspect ratio */
 @media (max-width: 639px) {
   .portfolio-image {
     height: auto;
   }
-}
-
-.portfolio-image:hover {
-  transform: scale(1.05);
 }
 
 .allheading {
