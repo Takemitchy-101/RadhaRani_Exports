@@ -12,7 +12,7 @@ import catAyurvedic from '../../assets/ayurvedaIcon.png';
 import catWax from '../../assets/waxIcon.png';
 import catchemical from '../../assets/chemicalIcon.png';
 import catMandO from '../../assets/oandmIcon.png';
-
+import ayurvedicPDF from '../../assets/pdf/AyurvedicProduct.pdf';
 import waxPdf from '../../assets/pdf/WaxProduct.pdf';
 import chemicalPdf from '../../assets/pdf/ChemicalProduct.pdf';
 import metalandoilPdf from '../../assets/pdf/MetalOilProduct.pdf';
@@ -26,6 +26,7 @@ const countryCodeMap = {
 };
 
 const categoryPDFs = {
+  Ayurvedic:ayurvedicPDF,
   Wax: waxPdf,
   'Natural Chemcials': chemicalPdf,
   'Metals And Oils': metalandoilPdf,
