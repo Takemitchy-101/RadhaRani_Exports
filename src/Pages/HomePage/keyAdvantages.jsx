@@ -120,7 +120,7 @@ Our logistics ensure on-time delivery, safe transit, and legal compliance across
                             We provide lab reports and certifications to ensure you get what you expect—every time.
                           </p>
 
-                          <div className="mt-4">
+                          <div className="mt-2">
                             <p className="font-semibold text-green-700 mb-2">We are certified under:</p>
                             <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4">
                               {['APEDA', 'FSSAI', 'Spices Board', 'EPR Registered'].map((name) => (

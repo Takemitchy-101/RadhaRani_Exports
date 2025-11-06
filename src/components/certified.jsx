@@ -8,7 +8,7 @@ import apeda from "../assets/Apeda.png";
 
 export const Certified = () => {
     return (
-        <div className="px-4 py-10 max-w-6xl mx-auto">
+        <div className="px-4 py-5 max-w-6xl mx-auto">
             {/* Certifications Section */}
             <div className="mb-10">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center headFont">
