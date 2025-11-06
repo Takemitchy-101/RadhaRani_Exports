@@ -8,6 +8,7 @@ import newRangeBG1 from '../../assets/newRangeBG1.png';
 import newRangeBG2 from '../../assets/newRangeBG2.png';
 import newRangeMain from '../../assets/newRangeMain.png';
 import iol from '../../assets/indianOilLogo.png';
+import cpclLogo from '../../assets/cpclLogo.png';
 
 const categories = [
   { id: "Ayurvedic", icon: type1, label: 'Ayurvedic' },
@@ -95,9 +96,14 @@ const ProductType = () => {
           <Row gutter={[24, 24]} className="w-full pb-5">
             <Col span={24}>
               <div className="md:hidden w-full max-w-sm mx-auto bg-white rounded-xl shadow-md p-4 flex items-center gap-4 transition-transform hover:scale-[1.02] duration-300">
-  <div className="p-2 border border-gray-200 rounded-lg shadow-sm flex-shrink-0">
+  <div className="flex items-center gap-2 border border-gray-200 rounded-lg shadow-sm flex-shrink-0">
     <img
       src={iol}
+      alt="Indian Oil Logo"
+      className="h-[50px] w-[50px] object-contain transition-transform duration-300 hover:scale-110"
+    />
+    <img
+      src={cpclLogo}
       alt="Indian Oil Logo"
       className="h-[50px] w-[50px] object-contain transition-transform duration-300 hover:scale-110"
     />

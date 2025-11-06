@@ -12,6 +12,7 @@ import logo from '../assets/mainLogo.png';
 import iol from '../assets/indianOilLogo.png';
 import Flag from 'react-world-flags';
 import { SiGooglemaps } from "react-icons/si";
+import cpclLogo from '../assets/cpclLogo.png';
 
 export const BottomBar = () => {
   const footerSections = [
@@ -111,16 +112,29 @@ export const BottomBar = () => {
         </Row>
       </div>
 
-      <div className="flex flex-col items-center text-center sm:flex-row sm:justify-center sm:text-left">
-        <img
-          src={iol}
-          alt="Indian Oil Logo"
-          className="h-[50px] w-[50px] object-contain mb-2 sm:mb-0"
-        />
-        <h1 className="text-2xl font-semibold headFont sm:ml-4">
-          Distributors of Indian Oil, Paraffin Wax and White Oil
-        </h1>
-      </div>
+      <div className="flex flex-col items-center text-center py-8">
+  <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-8 max-w-6xl w-full px-6">
+
+    {/* Logos — always side-by-side on every screen */}
+    <div className="flex items-center gap-4 sm:gap-6 shrink-0">
+      <img
+        src={iol}
+        alt="Indian Oil Logo"
+        className="h-[56px] w-[56px] object-contain"
+      />
+      <img
+        src={cpclLogo}
+        alt="CPCL Logo"
+        className="h-[56px] w-[56px] object-contain"
+      />
+    </div>
+
+    {/* Title — same line on big screens, next line on small screens */}
+    <h1 className="text-2xl sm:text-3xl font-semibold headFont text-white leading-tight">
+      Distributors of Indian Oil, CPCL, Paraffin Wax and White Oil
+    </h1>
+  </div>
+</div>
 
 
       {/* Bottom Social Section */}

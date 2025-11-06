@@ -4,6 +4,7 @@ import { Row, Col, Drawer, Button } from 'antd';
 import { DownOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import iol from '../assets/indianOilLogo.png';
+import cpclLogo from '../assets/cpclLogo.png';
 
 const Navbar = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
@@ -57,6 +58,12 @@ const Navbar = () => {
             alt="Indian Oil Logo"
             className="h-[50px] w-[50px] object-contain transform group-hover:scale-105 transition-transform duration-300"
           />
+          <img
+            src={cpclLogo}
+            alt="Indian Oil Logo"
+            className="h-[50px] w-[50px] object-contain transform group-hover:scale-105 transition-transform duration-300"
+          />
+
           <div className="text-white text-sm font-semibold leading-snug">
             <div className="group-hover:text-green-200 transition-colors duration-300">
               Leading Distributor
