@@ -10,7 +10,7 @@ import pf4 from '../../assets/portf4.png';
 
 const Portfolio = () => {
   return (
-    <div className="py-16 px-4 sm:px-10 md:px-20 bg-white">
+    <div className="py-10 px-4 sm:px-10 md:px-20 bg-white ">
       {/* Title Section */}
       <div className="text-center mb-16" id="gallery">
         <div className="flex items-center justify-center mb-4">
@@ -53,14 +53,14 @@ const Portfolio = () => {
               className="portfolio-image"
             />
           </div>
-          <div className="aspect-w-1 aspect-h-1">
+          <div className="hidden sm:block aspect-w-1 aspect-h-1">
             <img
               src={pf41}
               alt="Portfolio 4"
               className="portfolio-image"
             />
           </div>
-          <div className="aspect-w-1 aspect-h-1">
+          <div className="hidden sm:block aspect-w-1 aspect-h-1">
             <img
               src={pf5}
               alt="Portfolio 5"
